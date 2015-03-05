@@ -4,28 +4,42 @@
 \subsection{Introduksjon / Problemet (1-2 sider)}
 {\color{red} Omskriv: FORKLAR SOM OM VED WHITEBOARDET!}
 
-La oss vurdere problemet å styre det smarte hjemmet på en naturlig og effektiv måte {\color{red} bruk et eksempel}. Brukere ønsker å kunne kontrollere de ulike delene av hjemmet; lys skal skrus av og på, persienner og garasjedører skal opp og ned, temperatur skal stilles, dører skal låses opp og igjen. Den gamle måten å gjøre det på er individuelle knapper og brytere for hver funksjonalitet. Ettersom antallet enheter som kan styres stadig øker ender vi opp med en økende mengde brytere og det oppstår problemer rundt plass, estetikk og vanskeligheter med å lære hvilke brytere som hører til hvilket apparat. En løsning til dette er å samle styringskontrollen i en app, tilgjengelig på nettbrett og smarttelefoner. {\color{red} naturlig? effektivt?}. Bruken av gester for styring er utforsket i en rekke prosjekter. Tilnærmingen blant disse er RGB-kameraer, dybdekameraer og algoritmer for datasyn. Sammen kan disse prosessere bildene og danne grunnlaget for et system som blant annet kan gjenkjenne avanserte gester. Vel, bruken av kameraer har visse problemer i hjemmescenariet. Brukerundersøkelser {\color{red} refererfef} har vist at de færreste ønsker overvåking i smarte hjem. Selv dersom det kan garanteres at dataene fra kameraene holdes lokalt kan følelsen av at personvernet er utsatt være nok til at brukerene vil holde seg unna.
+Problemet vi utforsker er å styre det smarte hjemmet på en naturlig og effektiv måte {\color{red} bruk et eksempel}. I et smart hjem skal det naturligvis være mulig å styre den gamle funksjonaliteten, som å skru av og på lys, men det vil også være andre styringsmuligheter; persienner og garasjedører skal opp og ned, temperatur skal stilles, dører skal låses opp og igjen og elektriske apparater skal kunne kontrolleres. Den gamle måten for å realisere dette er ved individuelle knapper og brytere for hver funksjonalitet.  {\color{red} BILDE AV VEGG MED KNAPPE-PANEL} Ettersom antallet enheter som kan styres stadig øker ender vi opp med en økende mengde brytere og det oppstår problemer rundt plass, estetikk og vanskeligheter med å lære hvilke brytere som hører til hvilket apparat. En løsning til dette er å samle styringskontrollen i en app, tilgjengelig på nettbrett og smarttelefoner. {\color{red} BILDE AV TYPISK STYRINGSAPP PÅ NETTBRETT} {\color{red} naturlig? effektivt?}. Bruken av gester for styring er utforsket i en rekke prosjekter. Tilnærmingen blant disse er RGB-kameraer, dybdekameraer og algoritmer for datasyn. Sammen kan disse prosessere bildene og danne grunnlaget for et system som blant annet kan gjenkjenne avanserte gester. Vel, bruken av kameraer har visse problemer i hjemmescenariet. Brukerundersøkelser {\color{red} refererfef} har vist at de færreste ønsker overvåking i smarte hjem. Selv dersom det kan garanteres at dataene fra kameraene holdes lokalt kan følelsen av at personvernet er utsatt være nok til at brukerene vil holde seg unna.
 
 Dette kapittelet har følgende bidrag:
 \begin{itemize}
-\item Å presentere enkle fotodioder som et tilstrekkelig medium for enkel brukerinteraksjon {\color{red} fwd ref}.
-\item Å vise at fire fotodioder pakket som en gestesensor gjennom maskinlæring kan forstå minimum 10 ulike gester med 95 prosent suksess {\color{red} fwd ref}.
+\item Jeg viser at en gestesensor i form av enkle fotodioder er et tilstrekkelig medium for enkel brukerinteraksjon {\color{red} fwd ref}.
+\item Jeg viser at maskinlæring kan benyttes for å lære et system å forstå enkle gester og at dette er et  alternativ til å programmere forståelse av ulike gester {\color{red} fwd ref}.
+\item Jeg viser at standard implementasjoner av kjente maskinlæringsalgoritmer kan benyttes for å forstå minimum 10 ulike gester med 95 prosent suksess, selv med et minimalt antall treningstilfeller. {\color{red} fwd ref}.
 \end{itemize}
 
 \subsection{Min idé (2 sider)}
-Min idé har vært å undersøke hvorvidt man kan hente data fra en svært enkel sensor og ved hjelp av standard klassifiseringsalgoritme lage et system som forstår en rekke enkle, men forskjellige gester. Dersom dette kan oppnås kun med dataene samlet fra en sensor på størrelse med en halv fingernegl kan en enkelt sensor ta svært liten plass på veggen i et smart hjem, men samtidig være kraftig nok til å forstå de fleste styringskommandoer som trengs. 
+{\color{red} IDEEN} Dette avsnittet presenterer hovedbidraget for dette kapitellet. 
+Dersom man ønsker å tilby styringsmuligheter på en eller flere vegger i et hus kan enkle gestesensorer benyttes i steden for et stort panel av knapper og dimmere. {\color{red} BILDE AV SENSOR med størrelsesmål / sammenlignet med kjent, lite objekt.} Selve sensoren er på størrelse med et knappenålshode og vi kan dermed forestille oss at designere kan komme opp med produktimplementasjoner som enten forsvinner inn i hjemmiljøet eller synes tydelig, men er praktisk og estetisk veldesignet. Sensoren merker at en hånd eller et annet objekt befinner seg foran den ved å sende ut et svakt infrarødt signal som reflekteres og detekteres dersom signalet er sterkt nok når det returnerer. Dette vil bare skje dersom objektet er opptil 20 cm unna sensoren. Dette betyr at gester kun forstås dersom de utføres rett foran sensoren. I motsetning til gesteforståelse gjennom bruk av kameraer er dette altså en langt mindre påtrengende måte å "lytte" etter input fra brukerne. Brukere kan være sikre på at de hverken overvåkes eller at personvernet deres på noen måte brytes. En slik gestesensor fungerer rett og slett kun som en multifunksjonell knapp.
 
-\subsection{Detaljer (5 side)}
+{\color{red} BILDE AV GEST}
+Figur x viser en typisk gest der brukeren sveiper hånda foran sensoren som befinner seg på veggen. Vi kan forestille oss at denne sveipende bevegelsen foran denne sensoren betyr å skru av lyset i rommet sensoren befinner seg i. Men kanskje gesten betyr å skru på radioen, lukke gardinene eller starte kaffemaskinen. Det er ingen begrensning på hva en enkelt gest aktiverer i form av funksjonalitet.
+
+Når en gest utføres må enten rådataene fra sensoren eller en forståelse av dataene sendes til en maskin som har ansvaret for å styre apparatene i hjemmet. Sensoren må være knyttet til en mikrokontroller eller tilsvarende som har ansvaret for å sende dataene videre. Dette kan enten være gjennom kabel eller trådløst. Det er mulig å programmere en mikrokontroller til å skille mellom sensordataene og forstå seks ulike gester {\color{red} ref}. Dette er i seg selv bra og betyr at en enkelt sensor kan fungere som en multifunksjonell knapp med minimum seks forskjellige kommandoer. Hvis man også utnytter at kombinasjonen av flere gester etter hverandre kan bety egne kommandoer er styringsmulighetene mange. Det finnes et alternativ til å programmere inn hva de ulike dataene skal tolkes som. Alternativet er å sende rådataene til en kraftigere maskin som kan benytte den spennende teknikken kjent som maskinlæring til å forstå enda flere ulike gester, med god sannsynlighet for suksess.
+
+Maskinlæring handler om å la maskinen lære fra data. Dette kan enten være et forsøk på å finne ukjente sammenhenger i dataene den mates med eller det kan være å lære seg sammenhenger mellom dataeksempler og etiketter/klasser. Det er dette sistnevnte scenariet vi er interessert i. Vi kan mate maskinen med data fra en gest og samtidig gi informasjon om at dataene maskinen akkurat fikk betyr "sveip til høyre". Dermed kan maskinen danne en knytning mellom dataene som kom inn da vi sveipet til høyre og etiketten "sveip til høyre". Med tilstrekkelig treningseksempler fra de ulike gestene skal maskinen kunne lære seg forskjellene mellom de ulike gestene. Dermed vil den være i stand til å gjette riktig på hvilken gest vi utfører ved en senere anledning.
+
+Prototypen jeg har utviklet er trent med 50 ulike dataeksempler på hver av de 10 ulike gestene. Systemet er i stand til å korrekt klassifisere nye gester 95 prosent av tiden. {\color{red} Hvor bra er dette?} 
+
+{\color{red} BILDE AV DE 10 (14?) ULIKE GESTENE}
+
+
+\subsection{Detaljer (5 sider)}
 Idéen fungerer! Detaljer og data.
 
 \subsubsection{APDS9960 - Gestursensor}
-Sensorinfo, sparkfun, arduino
-
-\subsubsection{Overvåket læring - Klassifisering}
-asd
+{\color{red} Sensorinfo, sparkfun, arduino} Prototypen er utviklet med Sparkfun's utgave av APDS9960-sensoren. 
 
 \subsubsection{Data-prosessering}
 Hente data fra sensoren. Hva slags type data? Hva må gjøres av preprossesering? Valg av algoritmer.
+
+\subsubsection{Overvåket læring - Klassifisering}
+asd
 
 \subsubsection{Støttevektormaskiner}
 asd
@@ -43,11 +57,7 @@ asd
 Her er hva andre folk har gjort.
 
 \subsection{Konklusjoner og videre arbeid (0.5 side)}
-Hva kan gjøres videre.
-
-\subsection{Introduksjon, maskinlæring, måloppnåelse, design av eksperiment}
-asd
-
+Hva kan gjøres videre: online læring, annen bruk av APDS9960 (farge, interrupts, ..), flere gester (er det nyttig?)
 
 
 
