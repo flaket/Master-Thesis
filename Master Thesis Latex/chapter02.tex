@@ -10,7 +10,7 @@ Dette kapittelet har følgende bidrag:
 \begin{itemize}
 \item Jeg viser at en gestesensor i form av enkle fotodioder er et tilstrekkelig medium for enkel brukerinteraksjon {\color{red} fwd ref}.
 \item Jeg viser at maskinlæring kan benyttes for å lære et system å forstå enkle gester og at dette er et  alternativ til å programmere forståelse av ulike gester {\color{red} fwd ref}.
-\item Jeg viser at standard implementasjoner av kjente maskinlæringsalgoritmer kan benyttes for å forstå minimum 10 ulike gester med 95 prosent suksess, selv med et minimalt antall treningstilfeller. {\color{red} fwd ref}.
+\item Jeg viser at enkle og kjente maskinlæringsalgoritmer kan benyttes for å forstå 10 ulike gester med 96\% suksess, og at det kreves svært få treningstilfeller. {\color{red} fwd ref}.
 \end{itemize}
 
 \subsection{Min idé (2 sider)}
@@ -24,40 +24,89 @@ Når en gest utføres må enten rådataene fra sensoren eller en forståelse av 
 
 Maskinlæring handler om å la maskinen lære fra data. Dette kan enten være et forsøk på å finne ukjente sammenhenger i dataene den mates med eller det kan være å lære seg sammenhenger mellom dataeksempler og etiketter/klasser. Det er dette sistnevnte scenariet vi er interessert i. Vi kan mate maskinen med data fra en gest og samtidig gi informasjon om at dataene maskinen akkurat fikk betyr "sveip til høyre". Dermed kan maskinen danne en knytning mellom dataene som kom inn da vi sveipet til høyre og etiketten "sveip til høyre". Med tilstrekkelig treningseksempler fra de ulike gestene skal maskinen kunne lære seg forskjellene mellom de ulike gestene. Dermed vil den være i stand til å gjette riktig på hvilken gest vi utfører ved en senere anledning.
 
-Prototypen jeg har utviklet er trent med 50 ulike dataeksempler på hver av de 10 ulike gestene. Systemet er i stand til å korrekt klassifisere nye gester 95 prosent av tiden. {\color{red} Hvor bra er dette?} 
+Prototypen jeg har utviklet er trent med 50 ulike dataeksempler på hver av de 10 ulike gestene. Systemet er i stand til å klassifisere nye gester korrekt 96\% av tiden. {\color{red} Hvor bra er dette?} 
 
 {\color{red} BILDE AV DE 10 (14?) ULIKE GESTENE}
 
 
 \subsection{Detaljer (5 sider)}
-Idéen fungerer! Detaljer og data.
+Her omtaler vi detaljer rundt sensoren, mikrokontrolleren, håndtering av data og bruk av maskinlæring.
 
-\subsubsection{APDS9960 - Gestursensor}
-{\color{red} Sensorinfo, sparkfun, arduino} Prototypen er utviklet med Sparkfun's utgave av APDS9960-sensoren. 
+\subsubsection{Hardware}
+
+\subsubsection*{APDS9960}
+APDS9960 er en sensor som tilbyr måling av lys og farge, oppdagelse av nærhet og gestegjenkjennelse.
+
+\subsubsection*{Sparkfun}
+Prototypen er utviklet med Sparkfun's innpakning av APDS9960-sensoren. Produktet fra Sparkfun gjør APDS9960-sensoren tilgjengelig for enkel prototyping ved å bryte ut ulike pinner.
+
+\subsubsection*{Arduino}
+I tillegg har de gjort tilgjengelig programvare til arduino-plattformen. De ulike programmene kan lastes opp til en arduino med gestesensoren tilkoblet og tilbyr ulik funksjonalitet. 
 
 \subsubsection{Data-prosessering}
 Hente data fra sensoren. Hva slags type data? Hva må gjøres av preprossesering? Valg av algoritmer.
 
-\subsubsection{Overvåket læring - Klassifisering}
+Seriell data sendes fra mikrokontrolleren til datamaskinen som lytter på riktig port. Sensoren sender data så lenge ir-signalet reflekteres. Dette betyr at en gest som tar lengre tid skaper mer data. Et rolig sveip over sensoren med hele hånda kan skape 100-200 datapunkter. Et raskt flikk med to fingre skaper 16-32 datapunkter. En gest som involverer å holde hånda foran sensoren i et sekund eller mer skaper flere hundre datapunkter. For å benytte de planlagte klassifiseringsteknikkene må hvert av dataeksemplene inneholde like mange datapunkter. Hver input må ha like mange features.
+
+Det finnes ulike metoder for å løse dette problemet. En av de er å bestemme et øvre antall maksimale features som skal tas med. Inputeksempler som ikke har tilstrekkelig med features blir paddet med 0-verdier. Å sette en maksgrense på features kan føre til at man mister viktig data fra gester som tar lengre tid å utføre. For et inputeksempel fra en rask gest vil mange features være 0. Dette kan påvirke effektiviteten til læringsalgoritmen. Et annet alternativ er å velge et fast antall features vært inputeksempel skal ha og så mappe inputeksempelet til denne featurevektoren. Dersom input har få datapunkter blir featurevektoren sparsom med data spredt jevnt utover og med 0-verdier i mellom. Dersom input har mye data vil hver feature i featurevektoren være et gjennomsnitt av en viss mengde datapunkter.
+
+{\color{red} BILDE AV DATA SOM MAPPES TIL LITEN FEATUREVEKTOR, BÅDE LITE INPUT OG MYE INPUT.}
+
+Jeg valgte å lage vektorer med 128 features. Dette tallet ble valgt basert på antall datapunkter som genereres ved ulike aktuelle gester. 128 features er nok til å gi tilstrekkelig detaljer selv ved gester som tar noe lengre tid og samtidig ikke så mange at raske gester skaper for sparsomme resultater. Featurevektoren normaliseres ved å mappe de mulige sensorverdiene 0-255 til 0-1.0. 
+{\color{red} pythonkode for å lage featurevektor.}
+
+\subsubsection{Overvåket maskinlæring: Klassifisering}
+Arthur Samuel (1959). Maskinlæring er gir datamskiner evnen til å lære uten å bli eksplisitt programmert.
+
+Tom Mitchell (1998). Et dataprogram sies å lære fra erfaring med hensyn på en oppgave og et ytelsesmål, dersom ytelsen på oppgaven, som målt av ytelsesmålet, øker med erfaring.
+
+Den generelle modellen er å mate et treningssett av datapunkter til en læringsalgoritme. Algoritmen danner en hypotese om hva slags modell som best beskriver dataene. Denne hypotesen kan så benyttes til å gjøre gjetninger på nye datapunkter.
+{\color{red} Traning set -> Learning Algorithm -> Hypothesis -> Prediction on test data}
+
+Hypotesen avhenger av egenskapene i datapunktene og er en funksjon av parameterne i treningsdataene $x$:
+
+\[ h_\theta(x) = \theta_0 + \theta_1x_1 + \theta_2x_2 + ... \theta_nx_n\]
+
+En vellykket hypotese vekter $\theta$-verdiene godt for å maksimere ytelsen på algoritmen. Så hvordan velger man disse $\theta$-verdiene? Vi ønsker $\theta$-verdier slik at \(h_\theta(x)\) er nære $y$ for treningseksemplene \((x,y)\).
+
+{\color{red} Basert på dataene er det to algortimer som bør fungere bra: logres og svm...}
+
+\subsubsection{Logistisk regresjon}
 asd
 
 \subsubsection{Støttevektormaskiner}
 asd
 
-\subsubsection{K-nærmeste-naboer}
-asd
-
-\subsubsection{Ensemble-metoder}
-asd
+\subsubsection{Eksperimentsutførelse}
+asdasdasdasdasd
 
 \subsubsection{Resultater}
-asd
+asdasdasdasdasd
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|| c c ||}
+\hline
+\% Korrekt klassifisering & Algoritme \\ [0.5ex] 
+ \hline\hline
+ 0.96 & SVM \\ 
+ \hline
+ 0.958 & SVC \\
+ \hline
+ 0.94048 & Logistisk regresjon \\ [1ex]
+ \hline
+\end{tabular}
+\caption{Gjennomsnittlige resultater klassifisering}
+\label{table:results}
+\end{table}
+
+{\color{red} andre algoritmer som kan være aktuelle med flere samples, graf som viser resultater for 100, 250 og 500 samples}
 
 \subsection{Relatert arbeid (1-2 sider)}
 Her er hva andre folk har gjort.
 
 \subsection{Konklusjoner og videre arbeid (0.5 side)}
-Hva kan gjøres videre: online læring, annen bruk av APDS9960 (farge, interrupts, ..), flere gester (er det nyttig?)
+Hva kan gjøres videre: online læring, flere gester (er det nyttig?), større featurevektor (enn 128)
 
 
 
