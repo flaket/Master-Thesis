@@ -3,20 +3,74 @@
 %%=========================================
 \subsection{Introduksjon / Problemet (1-2 sider)}
 {\color{red} FORKLAR SOM OM VED WHITEBOARDET!}
+Hva er en mer naturlig kommunikasjonsform enn tale? Generelt er det svært vanskelig å tenke seg andre former som kan beskrives som mer naturlige. Avhengig av hva som skal kommuniseres kan ulike tilnærminger være gode. Dersom man ønsker å skape noe gjennom manipulasjon blir tale raskt forbigått av en taktil kommunikasjonsform, som direkte kommunikasjon med hendene. Men når det gjelder å gi enkle kommandoer, å hente informasjon eller å kommunisere med andre mennesker kan tale fremstå som både den mest naturlige og effektive kommunikasjonsformen.
 
-Igjen prat om naturlig interaksjon. Hva er mer naturlig enn tale? Drømmen om å kommunisere kontinuerlig med datamaskinen gjennom tale. Er dette ønskelig i et hjem-scenario? Eksempelproblemet med de nye Samsung-tv'ene. Kanskje bruksområdet til tale bør begrenses til enkle kommandoer: "skru på lyset", "skru av tv'en". Selv om kommandoene kanskje bør være enkle kan det bli mange av dem, som jeg påpekte i kapitell 2. Et system som skal forstå tale må dermed kunne gjenkjenne og skille mange talekommandoer og vi er dermed inne i nlp-land. De fleste kommersielle systemer benytter seg av et aktiveringsord; man må si "OK Google" eller lignende for å aktivere talegjenkjenningen. 
+Drømmen om å kommunisere kontinuerlig med datamaskinen gjennom tale er tydelig gjennom både media og hvor penger til forskning plasseres. Denne oppgaven omhandler bruken av disse interaksjonsformene i konteksten av hjemmet. Så selv om tale kan være en interaksjonsform med stort potensiale i ulike domener må vi her spørre oss om å tilby tale som interaksjonsform er ønskelig i et hjem-scenario. 
+
+{\color{red}mer introduksjon....}
 
 Dette kapittelet har følgende bidrag:
 \begin{itemize}
-\item Viser at kombinasjonen av gester og tale hjelper talegjenkjenning ved å forstå domenet {\color{red} fwd ref}.
-\item Viser at  {\color{red} fwd ref}.
-\item Implementert et grafisk grensesnitt for å simulere effekten av kommandoer i simulert hjemmiljø {\color{red} fwd ref}.
+\item Argumenterer for at kombinasjonen av enkle gester og talekommandoer er en effektiv måte å interagere med det smarte hjemmet på {\color{red} fwd ref}.
+\item Viser at talegjenkjenning over en begrenset mengde ord dekker funksjonaliteten vi ønsker å tilby gjennom tale og at det finnes åpne og tilgjengelige løsninger for å løse dette problemet.{\color{red} fwd ref}.
+\item En implementasjon som håndterer multimodal input fra gestesensor og mikrofon. Denne benyttes for å simulerer bruken i et smart hjem ved å vise en dynamisk grafisk representasjon av inputdataene. Forskjellige anvendelser blir utforsket. {\color{red} fwd ref}.
 \end{itemize}
 
 \subsection{Min idé (2 sider)}
+{\color{red}PING: Kombinasjonen av enkle gester og begrenset tale er en aktuell og relativt enkelt implementerbar interaksjonsform for å styre det moderne hjemmet.}
 
-\subsection{Detaljer (5 side)}
-Tale, gester, multimodalitet
+Drømmen om kontinuerlig talekommunikasjon med datamaskinene/hjemmet. Et system som skal forstå naturlig tale må kunne gjenkjenne og skille tusenvis av ord i forskjellige kombinasjoner, i forskjellige språk og uttaler. Fagområdet som jobber med dette problemet heter "Naturlig språk-prosessering". 
+
+\subsubsection*{Samsung}
+BBC http://www.bbc.com/news/technology-31296188
+CMUSphinx http://cmusphinx.sourceforge.net/2015/02/current-state-of-offline-speech-recognition-and-smarttv/
+Offline speech recognition Google paper: https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/41176.pdf
+
+Problemene rundt Samsungs policy rundt talegjenkjenningsteknologien har skapt en del blest på internettet. Brukere har vist misnøye med at alt de sier i stua kan bli tatt opp og sendt til tredjeparter. 
+
+Hva er statusen til talegjenkjenningsteknologi som ikke benytter kommunikasjon over internettet til kraftige servere på den andre siden?  
+
+Talegjenkjenning på serveren har andre ulemper enn personvern. Det er for eksempel vanskelig å garantere en god responstid. Dersom det tar flere sekunder for dataene å nå serveren, bli prosessert og et resultat returneres kan nytteverdien til talegjenkjenning synke raskt. Umiddelbar respons er langt mer attraktivt.
+
+Moderne telefoner, tv-er og andre enheter blir stadig kraftigere, men de er langt unna supercomputerene som for eksempel kjører Google's talegjenkjenning. Med flere prosessorkjerner vil ytelsen igjen øke i framtiden, men full bruk av disse trekker kraftig på batteriet. 
+
+Google forsker selv på muligheter for å effektivisere talegjenkjenning på offline, mobile enheter. {\color{red}Accurate and Compact Large Vocabulary Speech Recognition on Mobile Devices by Xin Lei, Andrew Senior, Alexander Gruenstein and Jeffrey Sorensen} 
+
+Nøkkelegenskapene til denne gjenkjenneren er presise DNN-modeller over flerkjerneprosessorer. Quantization overalt og en effektiv komprimering av språkmodellen. Disse egenskapene lar dekoderen gjenkjenne brukerspørringer med 15\% feilrate over et vokabular med 50000 ord. Dette er imponerende resultater, men fremdeles for dårlig til at brukere vil finne det akseptabelt. Det er med andre ord mye arbeid som gjenstår før man har god talegjenkjenning på mobile enheter uten bruk av internett.
+
+Pocketsphinx er CMUSphinx-prosjektets talegjenkjenningsmotor designet for mobile enheter og andre alternative, ressursbegrensede plattformer. Pocketsphinx har et konfigurerbart vokabular så man kan skape modellene man trenger. Med god konfigurering kan Pocketsphinx gjenkjenne 10000 ord i reelltid med en feilrate på omtrent 20\%. Med midre vokabular kan presisjonen øke betraktelig og med under 100 ord er feilraten 3\%. Man kan også benytte et aktiveringsord slik at enheten kan lytte kontinuerlig gjennom dagen. Disse egenskapene gjør Pocketsphinx til et interessant valg når problemdomenet vårt tilsier at vi ønsker et system som gjenkjenner et titalls kommandoer i reelltid. Det er altså ikke nødvendig å knytte forståelsen opp mot internettet og sende taledataene ut i verden. Vi kan unngå problemene med personvern som Samsung og andre styrer med ved å holde all data lokalt. Vi ofrer en mer naturlig, kontinuerlig tale mot kommandoord, i bytte med en garantert bevarelse av personvernet.
+
+\subsection{Detaljer (5 sider)}
+
+\subsubsection*{Gester}
+Ref foregående kapittel.
+
+\subsubsection*{Tale}
+
+{\color{blue}Fra AIMA}
+Talegjenkjenning er å identifisere en sekvens av ord ut i fra et akustisk signal. Det har blitt en av teknikkene fra KI som har blitt populært og vidspredt. Talegjenkjenning benyttes daglig av brukere verden over for å gi navigasjonsinstrukser til bilene sine, gjøre søk på nettet eller å skrive gjennom diktasjon. Tale er en attraktivt interaksjonsform i alle tilfeller der brukeren kan ha bruk for å gjøre andre ting med hendene, eller der han ikke har muligheten til å bruke dem.
+
+Det er ingen enkel oppgave å gjenkjenne tale. Lydene brukeren lager inneholder ofte støy som 
+
+{\color{blue}Fra CMUSphinx}
+Tale virker enkelt å forstå: det er bygget opp av ord og hvert ord består av fonemer. I virkeligheten er det desverre svært annerledes. Tale er en dynamisk prosess uten klare skiller mellom ulike deler. De moderne måtene å beskrive tale på er i større eller mindre grad basert på sannsynligheter. Denne måten å se situasjonen på lar oss forstå at talegjenkjenning aldri vil være 100\% korrekt.
+
+Tale er en kontinuerlig strøm av audio der relativt stabile tilstander blander seg med dynamiske tilstander. I denne strømmen av tilstander kan man forsøke å definere klasser av lyder, kalt fonemer. De akustiske egenskapene til bølgeformen til et fonem kan variere kraftig avhengig av faktorer som omgivelseslyder, hvem som taler og hvordan denne kilden taler. Disse variasjonene kan gjøre at fonemer oppfattes svært annerledes ut enn det de skulle representere. 
+En strategi for å hjelpe mot disse problemene er å innse at de viktigste datapunktene er i overgangene mellom ord. Utviklere benytter ofte tre regioner i strømmen for å gjenkjenne et ord: den første delen avhenger av det foregående fonemet, midtpartiet er relativt stabilt, og den tredje delen avhenger av det følgende fonemet. Fonemer bygger subord-enheter, som stavelser. Stavelser kan være nyttige å modellere etter og de er kjent som "reduction-stable entities". Når tale utføres raskt vil fonemer ofte være annerledes, men stavelser forblir de samme. Flere subord danner ord. Ord er viktig i talegjenkjenning fordi de begrenser kombinasjonen av fonemer. Dersom det er 40 fonemer og et gjennomsnittlig ord har 7 fonemer finnes det 40 opphøyd i 7 mulige ord. Heldigvis benytter de fleste mennesker omtrent 10000 ord til daglig, hvilket gjør talegjenkjenning mer håndterlig {\color{red}ref}.
+
+Ord, sammen med andre ikke-lingvistiske lyder (som pust, hoste, pauselyder), danner ytringer. Ytringer er separate lyder mellom pauser. 
+
+Den vanlige måten å gjenkjenne tale på er følgende: man mottar en bølgeform, splitter den inn i ytringer delt av stillhet og forsøker så å gjenkjenne hva som blir sagt i hver ytring. For å gjøre dette tar vi alle mulige kombinasjoner av ord og forsøker å matche dem med lyden. Vi velger så den kombinasjonen som passer best.
+
+Tale modelleres gjerne med en Hidden Markov Model (HMM). Modellen beskriver en sekvens av tilstander der overgangen er gitt av en sannsynlighet. Det er en generell modell som kan beskrive alle sekvensielle prosesser og den har vist seg å være spesielt praktisk for å dekode tale.
+
+Tre modeller benyttes i talegjenkjenning for å matche ord med lyd. En akustisk modell, en ordbok og en språkmodell. Den akustiske modellen holder akustiske egenskaper for kombinasjoner av fonemer. En enkel fonetisk ordbok knytter ord med fonemer. Denne naive varianten er ikke veldig effektiv ettersom den ikke tar større hensyn til forskjellige uttaler, men den fungerer som regel i praksis. Maskinlæring kan benyttes her for å lære langt mer nyanserte sammenhenger. En språkmodell brukes for å innsnevre søket etter det passende ordet. Den definerer hvilke ord som kan følge etter det foregående gjenkjente ordet og hjelper dermed med å fjerne ord som ikke er sannsynlige. De fleste språkmodeller er n-gram modeller, som inneholder statistikk over ord-sekvenser, eller finite-state-modeller, som definerer talesekvenser av finite-state-automation med vekting. For å oppnå en god presisjon må språkmodellen utføre en god jobb på å begrense søkeområdet for mulige ord. Den må altså være svært god på å gjette det neste ordet. En språkmodell begrenser som regel vokabularet til ordene den inneholder. Dette skaper problemer med navn-gjenkjenning. Derfor kan en språkmodell også inneholde mindre deler, som subord eller til og med fonemer. Søkeområdet øker dersom disse introduseres og leder som regel til svakere presisjon enn med en ord-basert språkmodell.  
+
+\subsubsection*{Multimodalitet}
+
+Multimodalitet i forbindelse med datasystemer betyr å forbedre forståelsen gjennom en kombinasjon av flere input-kanaler. Meningen er å forbedre systemets nøyaktighet i å oppdage og forstå input-signaler, kanskje spesielt når dataene kommer på forskjellige og ikke-overlappende former. \citet{placelab05} og \emph{Placelab}-prosjektet er et bra eksempel på å kombinere video og audio for å bedre nøyaktigheten i å detektere menneskelig aktivitet. Faktisk oppdager vi at mange prosjekter gjør bruk av kombinasjoner av diverse sensorteknologier for å danne et rikere tilstandsbilde og for å forbedre nøyaktigheten. \citet{desilva12} nevner et prosjekt der en robot følger et menneske gjennom multimodale teknikker. Roboten har en visuell input og er trent gjennom et kunstig nevralt nettverk til å skille hudfarge fra omgivelsene og dermed identifisere mennesket. I tillegg benytter roboten seg av en sonarskanner samt taktile sensorer for å beregne avstanden til mennesket.
+
+\subsubsection*{Rejecting out-of-grammer-utterances}
 
 \subsection{Relatert arbeid (1-2 sider)}
 

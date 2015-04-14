@@ -2,9 +2,9 @@
 \section{Gestegjenkjennelse med fotodioder}
 %%=========================================
 \subsection{Introduksjon}
-Når hjemmet ditt om noen år tilbyr kontroll over ikke bare lys og temperatur, men garasjeporter, persienner, tv'er, radioer, låsene på døra og statusen til kjøkkenapparater, kan det være en utfordring å tilby gode interaksjonsmetoder. Den vanlige måten er enten å la kontrollknappene bo ved apparatet, samle de i et panel på veggen, eller samle de i en fjernkontroll eller app. Med et økende antall styrbare apparater blir det upraktisk å kun ha kontroll dersom man fysisk befinner seg ved apparatet. Å tilby kontroll i en fjernkontroll eller app kan være praktisk, men hva hvis denne mobile enheten blir gjenglemt et sted? En fjernkontroll eller app må også designes svært godt for å ikke skape forvirring med et vanskelig brukergrensesnitt. Spesielt en fjernkontroll vil gi uinnvidde brukere, som gjester eller beboere av et nyanskaffet system, svært store vanskeligheter. Så kanskje vi ønsker å ha et sted i rommet der kontrollen samles. Vel, et panel med knapper er ikke bare stygt, men det er vanskelig å vite hvilke knapper som hører til hvilken funksjonalitet (se figur \ref{fig:panel}). Hva hvis vi i stedet kunne tilby et eller flere punkter på veggen på størrelse med et knappenålshode som forstår en rekke enkle, men ulike gester? 
+Når hjemmet ditt om noen år tilbyr kontroll over ikke bare lys og temperatur, men garasjeporter, persienner, tv-er, radioer, låsene på døra og statusen til kjøkkenapparater, kan det være en utfordring å tilby gode interaksjonsmetoder. Løsningen på dette har hittil enten vært å la kontrollknappene være en del av apparatet eller å samle de i et panel på veggen, i en fjernkontroll eller i en app. Med et økende antall styrbare enheter blir det raskt upraktisk å kun ha kontroll dersom man fysisk befinner seg ved apparatet. Dermed kan det virke fornuftig å tilby kontroll gjennom en fjernkontroll eller en app. Men vil man alltid ha kontroll på hvor denne mobilen enheten befinner seg? I tillegg må en fjernkontroll eller app også designes godt for å unngå forvirring med et vanskelig brukergrensesnitt. Vi har alle vært uerfarne brukere av en ny fjernkontroll og opplevd større eller mindre problemer med å utøve kontroll over det aktuelle apparatet. Så kanskje det ikke er en dum idé å tilby et fast sted i rommet der kontrollen over aktuelle enheter er samlet? Det tradisjonelle panelet med knapper og dimmere er ikke bare stygt, men det er i tillegg vanskelig å vite hvilke knapper som hører til hvilken funksjonalitet (se figur \ref{fig:panel}). Det ideelle hadde kanskje vært å tilby et fast sted i rommet der kontroll kan utføres, men som er minimalistisk og allikevel kan styre et stort antall enheter. Hva hvis brukere kunne utføre enkle gester i luften foran en svært liten sensor, strategisk plassert på veggen?
  
-Denne ideén om å kontrollere ved hjelp av gester er ikke ny {\color{red} refererfef}. Tilnærmingen i disse prosjektene er kameraer som måler farger og dybde samt avanserte algortimer for datasyn. Sammen kan disse prosessere informasjonen og danne grunnlaget for et system som kan gjenkjenne kompliserte gester. Vel, bruken av kameraer har visse problemer i hjemmescenariet. {\color{red} Ref og ref} har vist at brukere har sterke motsetninger mot overvåking i sitt eget hjem. Selv dersom det kan garanteres at dataene fra kameraene holdes lokalt kan følelsen av at personvernet er utsatt være nok til at brukerene vil holde seg unna. Vi ønsker en alternativ måte å interagere med funksjonaliteten i hjemmet. Den skal være naturlig, effektiv og må garantere et vern av personvern og privatliv.
+Idéen om å kontrollere enheter ved hjelp av gester er ikke ny {\color{red} refererfef}. Tilnærmingen i disse prosjektene er kameraer som måler farger og dybde, samt avanserte algoritmer for datasyn. Sammen kan disse prosessere informasjonen og danne grunnlaget for et system som kan gjenkjenne kompliserte gester. Desverre er bruken av kameraer et problem i hjemmescenariet. {\color{red} Ref og ref} har vist at brukere har sterke motsetninger mot overvåking i sitt eget hjem. Selv dersom det kan garanteres at dataene fra kameraene holdes lokalt kan følelsen av at personvernet er utsatt være nok til at brukerene vil holde seg unna. Vi ønsker en alternativ måte å interagere med funksjonaliteten i hjemmet. Den skal være naturlig, effektiv og må garantere at privatliv og personvern blir ivaretatt.
 
 \begin{figure}
 \centering
@@ -22,8 +22,9 @@ Dette kapittelet har følgende bidrag:
 
 \subsection{Interaksjon gjennom gester}
 \label{ch:2.minide}
-Dette avsnittet presenterer hovedideén for dette kapitellet. 
-Dersom man ønsker å tilby styringsmuligheter på en eller flere vegger i et hus kan enkle gestesensorer benyttes i steden for et panel av knapper og dimmere. Selve sensoren er på størrelse med et knappenålshode og vi kan dermed forestille oss at designere kan komme opp med produktimplementasjoner som enten forsvinner inn i hjemmiljøet eller synes tydelig, men er praktisk og estetisk veldesignet. Sensoren merker at en hånd eller et annet objekt befinner seg foran den ved å sende ut et svakt infrarødt signal som reflekteres og detekteres dersom signalet er sterkt nok når det returnerer. Dette vil bare skje dersom objektet er opptil 20 cm unna sensoren. Dette betyr at gester kun forstås dersom de utføres rett foran sensoren. I motsetning til gesteforståelse gjennom bruk av kameraer er dette altså en langt mindre påtrengende måte å "lytte" etter input fra brukerne. Brukere kan være sikre på at de hverken overvåkes eller at personvernet deres på noen måte brytes. En slik gestesensor fungerer rett og slett kun som en multifunksjonell knapp.
+{\color{red}PING: Maskinlæring kan benyttes for å gi enkle sensorer en svært god forståelse av gester.}
+Dette avsnittet presenterer hovedidéen for dette kapitellet. 
+Dersom man ønsker å tilby styringsmuligheter på en eller flere vegger i et hus kan enkle gestesensorer benyttes i steden for et panel av knapper og dimmere. Selve sensoren er på størrelse med et knappenålshode og vi kan dermed forestille oss at designere kan komme opp med produktimplementasjoner som enten forsvinner inn i hjemmiljøet eller synes tydelig, men er praktisk og estetisk veldesignet. Sensoren merker at en hånd eller et annet objekt befinner seg foran den ved å sende ut et svakt infrarødt signal som reflekteres og detekteres dersom signalet er sterkt nok når det returnerer. Dette vil bare skje dersom objektet er opptil 20 cm unna sensoren. Dette betyr at gester kun forstås dersom de utføres rett foran sensoren. I motsetning til forståelse av gester gjennom bruk av kameraer er dette altså en langt mindre påtrengende måte å "lytte" etter innspill fra brukerne. Brukere kan være sikre på at de hverken overvåkes eller at personvernet deres på noen måte brytes. En slik gestesensor fungerer rett og slett kun som en multifunksjonell knapp.
 
 \begin{wrapfigure}{r}{0.4\textwidth}
     \vspace{-20pt}
@@ -40,7 +41,7 @@ Figur \ref{fig:gest} viser en typisk gest der brukeren sveiper hånda foran sens
 
 Når en gest utføres må enten rådataene fra sensoren eller en forståelse av dataene sendes til en maskin som har ansvaret for å styre apparatene i hjemmet. Sensoren må være knyttet til en mikrokontroller eller tilsvarende som har ansvaret for å sende dataene videre. Dette kan enten være gjennom kabel eller trådløst. Det er mulig å programmere en mikrokontroller til å skille mellom sensordataene og forstå seks ulike gester {\color{red} ref}. Dette er i seg selv bra og betyr at en enkelt sensor kan fungere som en multifunksjonell knapp med minimum seks forskjellige kommandoer. Hvis man også utnytter at kombinasjonen av flere gester etter hverandre kan bety egne kommandoer er styringsmulighetene mange. Det finnes et alternativ til å programmere inn hva de ulike dataene skal tolkes som. Alternativet er å sende rådataene til en kraftigere maskin som kan benytte den spennende teknikken kjent som maskinlæring til å forstå enda flere ulike gester, med god sannsynlighet for suksess.
 
-Maskinlæring handler om å la maskinen lære fra data. Dette kan enten være et forsøk på å finne ukjente sammenhenger i dataene den mates med eller det kan være å lære seg sammenhenger mellom dataeksempler og etiketter/klasser. Det er dette sistnevnte scenariet vi er interessert i. Vi kan mate maskinen med data fra en gest og samtidig gi informasjon om at dataene maskinen akkurat fikk betyr "sveip til høyre". Dermed kan maskinen danne en knytning mellom dataene som kom inn da vi sveipet til høyre og etiketten "sveip til høyre". Med tilstrekkelig treningseksempler fra de ulike gestene skal maskinen kunne lære seg forskjellene mellom de ulike gestene. Dermed vil den være i stand til å gjette riktig på hvilken gest vi utfører ved en senere anledning. Prototypen jeg har utviklet er trent med 50 ulike dataeksempler på hver av de 10 ulike gestene.
+Maskinlæring handler om å la maskinen lære fra data. Dette kan enten være et forsøk på å finne ukjente sammenhenger i dataene den mates med eller det kan være å lære seg sammenhenger mellom dataeksempler og etiketter/klasser. Det er dette sistnevnte scenariet vi er interessert i. Vi kan mate maskinen med data fra en gest og samtidig gi informasjon om at dataene maskinen akkurat fikk betyr "sveip til høyre". Dermed kan maskinen danne en kobling mellom dataene som kom inn da vi sveipet til høyre og etiketten "sveip til høyre". Med tilstrekkelig treningseksempler fra de ulike gestene skal maskinen kunne lære seg forskjellene mellom de ulike gestene. Dermed vil den være i stand til å gjette riktig på hvilken gest vi utfører ved en senere anledning. Prototypen jeg har utviklet er trent med 50 ulike dataeksempler på hver av de 10 ulike gestene.
 
 \begin{figure}[h]
 \begin{subfigure}{0.23\textwidth}
@@ -93,7 +94,7 @@ Maskinlæring handler om å la maskinen lære fra data. Dette kan enten være et
 \caption{Fjern - nær.}
 \label{fig:f-n}
 \end{subfigure}
-\caption{Illustrasjon av de ulike gestene.}
+\caption{Illustrasjoner av de ulike gestene.}
 \label{fig:gester}
 \end{figure}
 
@@ -106,20 +107,20 @@ Prototypen er utviklet med Sparkfun's innpakning av APDS9960-sensoren\footnote{h
 \subsubsection{Dataprosessering}
 Seriell data sendes fra mikrokontrolleren til datamaskinen som lytter på riktig port. Sensoren sender data så lenge ir-signalet reflekteres. Dette betyr at en gest som tar lengre tid skaper mer data. Et rolig sveip over sensoren med hele hånda kan skape 100-200 datapunkter. Et raskt flikk med to fingre skaper 16-32 datapunkter. En gest som involverer å holde hånda foran sensoren i et sekund eller mer skaper flere hundre datapunkter. For å benytte de planlagte klassifiseringsteknikkene må hvert av treningseksemplene må ha like mange egenskaper.
 
-Det finnes ulike metoder for å løse dette problemet. En av de er å bestemme et øvre antall maksimale egenskaper som skal tas med. Inputeksempler som ikke har tilstrekkelig med egenskaper blir paddet med 0-verdier. Å sette en maksgrense på egenskaper kan føre til at man mister viktig data fra gester som tar lengre tid å utføre. For et inputeksempel fra en rask gest vil mange egenskaper være 0. Dette kan påvirke effektiviteten til læringsalgoritmen. Et annet alternativ er å velge et fast antall egenskaper vært inputeksempel skal ha og så knytte inputeksempelet til denne egenskapervektoren. Dersom input har få datapunkter blir egenskapvektoren sparsom med data spredt jevnt utover og med 0-verdier i mellom. Dersom input har mye data vil hver egenskap i egenskapsvektoren være et gjennomsnitt av en viss mengde datapunkter.
+Det finnes ulike metoder for å løse dette problemet. En av de er å bestemme et øvre antall maksimale egenskaper som skal tas med. Inputeksempler som ikke har tilstrekkelig med egenskaper blir paddet med 0-verdier. Å sette en maksgrense på egenskaper kan føre til at man mister viktig data fra gester som tar lengre tid å utføre. For et inputeksempel fra en rask gest vil mange egenskaper være 0. Dette kan påvirke effektiviteten til læringsalgoritmen. Et annet alternativ er å velge et fast antall egenskaper vært inputeksempel skal ha og så knytte inputeksempelet til denne egenskapervektoren. Dersom inputdataene har få datapunkter blir egenskapsvektoren sparsom, med dataverdiene spredt jevnt utover og med 0-verdier i mellom. Dersom inputdataene består av mange datapunkter vil hver egenskap i egenskapsvektoren være et gjennomsnitt av en valgt mengde datapunkter.
 
-Jeg valgte å lage vektorer med 128 egenskaper. Dette tallet ble valgt basert på antall datapunkter som genereres ved ulike aktuelle gester. 128 egenskaper er nok til å gi tilstrekkelig detaljer selv ved gester som tar noe lengre tid og samtidig ikke så mange at raske gester skaper for sparsomme resultater. Egenskapsvektoren normaliseres ved å knytte de mulige sensorverdiene 0-255 til 0-1.0. Å illustrere dannelsen av vektorere med 128 egenskaper blir tungvint så i figur \ref{fig:data} har jeg illustrert prosessen med mindre data. I \ref{fig:few} består inputvektoren av to datapunkter. Vi ønsker en egenskapsvektor med størrelse fire. Dette oppnås ved å spre inputdataene jevnt i egenskapsvektoren og normalisere verdiene. \ref{fig:many} viser det motsatte tilfellet, der inputvektoren er for stor. For å representere dataene i en mindre egenskapsvektor blir det tatt gjennomsnittsverdier som deretter normaliseres. 
+Jeg valgte å benytte denne sistnevnte teknikken og lagde vektorer med 128 egenskaper. Dette tallet ble valgt basert på antall datapunkter som genereres ved ulike aktuelle gester. 128 egenskaper er nok til å gi tilstrekkelig detaljer selv ved gester som tar noe lengre tid og samtidig ikke så mange at raske gester skaper i overkant sparsomme vektorer. Egenskapsvektoren normaliseres ved å knytte de mulige sensorverdiene [0,255] til [0,1.0]. Å illustrere dannelsen av vektorere med 128 egenskaper blir tungvint så i figur \ref{fig:data} har jeg illustrert prosessen med mindre data. I \ref{fig:few} består inputvektoren av to datapunkter. Vi ønsker en egenskapsvektor med størrelse fire. Dette oppnås ved å spre inputdataene jevnt i egenskapsvektoren og normalisere verdiene. \ref{fig:many} viser det motsatte tilfellet, der inputvektoren er for stor. For å representere dataene i en mindre egenskapsvektor blir det tatt gjennomsnittsverdier som deretter normaliseres. 
 
 \begin{figure}[h]
 \centering
 \begin{subfigure}{0.23\textwidth}
 \includegraphics[width=3cm, height=3cm]{fig/few-to-many}
-\caption{Sveip til høyre.}
+\caption{}
 \label{fig:few}
 \end{subfigure}
 \begin{subfigure}{0.23\textwidth}
 \includegraphics[width=3cm, height=3cm]{fig/many-to-few}
-\caption{Sveip til høyre.}
+\caption{}
 \label{fig:many}
 \end{subfigure}
 \caption{Illustrasjon av dannelsen av en egenskapsvektorer.}
@@ -131,22 +132,22 @@ Jeg valgte å lage vektorer med 128 egenskaper. Dette tallet ble valgt basert p�
 \subsubsection{Maskinlæring: Klassifisering}
 La oss begynne med en definisjon på maskinlæring fra Arthur Samuel (1959): "Maskinlæring gir datamaskiner evnen til å lære uten å bli eksplisitt programmert."
 
-Denne definisjonen er over 50 år gammel, men den fanger hva vi er ute etter. Vi er interessert i å få datamaskinene til å lære å gjøre nyttige ting uten å behøve å fortelle dem eksplisitt hvordan hver enkelt oppgave skal utføres. Dette er nødvendig da det med mye og kompleks data raskt blir umulig å beskrive alle deloppgavene som må utføres.
+Denne definisjonen er over 50 år gammel, men den fanger hva vi er ute etter. Vi er interessert i å få datamaskinene til å lære å gjøre nyttige ting uten å behøve å fortelle dem eksplisitt hvordan hver enkelt oppgave skal utføres. Dette er nødvendig da det med mye og kompleks data raskt blir umulig for en programmerer å beskrive alle deloppgavene som må utføres.
 
-Alle maskinlæringsproblemer kan konseptualiseres som å finne en funksjon som knytter input til output. Målet kan være å tilnærme en enkel matematisk funksjon, det kan være å spå aksjekursen basert på historisk data eller det kan være å gi sannsynligheten for et en epost er spam, basert på innholdet. Man tar erfaring i form av empirisk data og kjører det gjennom en algoritme som automatisk skaper en funksjon som forsøker å dekke denne kunnskapen.
+Alle maskinlæringsproblemer kan konseptualiseres som å finne en funksjon som knytter input til output. Målet kan være å tilnærme en enkel matematisk funksjon, det kan være å spå aksjekursen basert på historisk data eller det kan være å gi sannsynligheten for et en epost er spam, basert på innholdet. Man tar erfaring, i form av empirisk data, og kjører det gjennom en algoritme som forsøker å finne en funksjon som dekker denne kunnskapen best mulig.
 
-I dette prosjektet skal dataene en gest danner knyttes til navnet på en gest. Dette er en form for maskinlæring kalt overvåket læring og målet er korrekt klassifisering av dataene. Læringen er overvåket fordi vi bidrar med informasjon om hvilke klasser som hører til hvilke data i treningseksemplene. Framgangsmåten er å mate maskinen med mange treningseksempler på denne koblingen mellom data og gest og håpe at maskinen finner en matematisk funksjon som tilnærmer denne sammenhengen godt.
+I dette prosjektet skal dataene en gest danner knyttes til navnet på en gest. Dette er en form for maskinlæring kalt overvåket læring. Målet er å klassifisere nye data korrekt, basert på treningsgrunnlaget fra tidligere data. Læringen sies å være overvåket fordi vi bidrar med informasjon om hvilke klasser som hører til hvilke data i treningseksemplene. Framgangsmåten er å mate maskinen med mange eksempler på denne koblingen mellom data og gest og håpe at maskinen finner en matematisk funksjon som tilnærmer denne sammenhengen godt.
 
-Dataene vi jobber med i dette prosjektet har 128 egenskaper og 50 treningseksempler av hver klasse. Dette er relativt mange egenskaper og få treningseksempler. Basert på disse karakteristikkene er det sannsynlig at enkle, lineære modeller vil gi de beste resultatene. Mer avanserte klassifiseringsteknikker, som for eksempel nevrale nettverk, kan i teorien tilnærme enhver funksjon, men de trenger langt flere treningseksempler for å finne de sanne sammenhengene mellom datapunktene.
+Dataene vi jobber med i dette prosjektet har 128 egenskaper og 50 treningseksempler av hver klasse. Dette er relativt mange egenskaper og få treningseksempler. Basert på disse karakteristikkene er det sannsynlig at enkle, lineære modeller vil gi de beste resultatene {\color{red} refeefer! Scikitlearn?}. Mer avanserte klassifiseringsteknikker, som for eksempel nevrale nettverk, kan i teorien tilnærme enhver funksjon, men de trenger langt flere treningseksempler for å finne de sanne sammenhengene mellom datapunktene.
 
-Vi mater et treningssett av datapunkter til en valgt læringsalgoritme. Algoritmen danner seg en hypotese om hva slags modell som best beskriver dataene. Denne hypotesen kan så benyttes til å gjøre gjetninger på nye datapunkter. Hypotesen avhenger av egenskapene/variablene/kvalitetene {\color{red} hvilket ord er best?} i datapunktene. I en lineær modell er hypotesen en funksjon av egenskapene $x$ i treningsdataene, der hver egenskap blir vektet av $\theta$-verdier:
+Vi mater et treningssett av datapunkter til en valgt læringsalgoritme. Algoritmen danner seg en hypotese om hva slags modell som best beskriver dataene. Denne hypotesen kan så benyttes til å gjøre gjetninger på nye datapunkter. Hypotesen avhenger av egenskapene i datapunktene. I en lineær modell er hypotesen en funksjon av egenskapene $x$ i treningsdataene, der hver egenskap blir vektet av $\theta$-verdier:
 
 \begin{equation}
-h_\theta(x) = \theta_0 + \theta_1x_1 + \theta_2x_2 + ... + \theta_nx_n
+h_\theta(x) = \theta_0x_0 + \theta_1x_1 + \theta_2x_2 + ... + \theta_nx_n
 \label{eq:hypotese-lin}
 \end{equation}
 
-I dette prosjektet har vært datapunkt $n = 128$ egenskaper. La oss modellere $x$ til å være en vektor av disse egenskapene: 
+I dette prosjektet har hvert datapunkt $n = 128$ egenskaper. La oss modellere $x$ til å være en vektor med disse egenskapene: 
 \[
 x =
 \begin{bmatrix}
@@ -154,9 +155,9 @@ x_0 \\
 x_1 \\
 x_2 \\
 .. \\
-x_n
+x_{128}
 \end{bmatrix}
-\in R^{n+1},
+\in R^{128},
 \]
 Vi lar $\theta$ være en tilsvarende vektor: 
 \[
@@ -166,20 +167,59 @@ Vi lar $\theta$ være en tilsvarende vektor:
 \theta_1 \\
 \theta_2 \\
 .. \\
-\theta_n
+\theta_{128}
 \end{bmatrix}
-\in R^{n+1}
+\in R^{128}
 \]
 
-Dersom vi nå tar den transponerte av $\theta$ og lar \(x_0 = 1\), kan vi i stedet for (\ref{eq:hypotese-lin}) skrive hypotesen kompakt som:
+Dersom vi nå tar den transponerte av $\theta$ og lar \(x_0 = 1\), kan vi i stedet for (\ref{eq:hypotese-lin}) skrive hypotesen elegant og kompakt som indreproduktet av vektorene:
 \begin{equation}
 h_\theta(x) = \theta^{T}x
 \label{eq:hypotese-kompakt}
 \end{equation}
 
-En vellykket hypotese vekter $\theta$-verdiene godt for å maksimere ytelsen på algoritmen. Dette er det samme som å finne hvilke egenskaper i dataene som er de viktigste for å representere likheter/ulikheter (?). Så hvordan velger man disse $\theta$-verdiene? Vi ønsker $\theta$-verdier slik at hypotesen \(h_\theta(x)\) er nære klassen $y$ for treningseksemplene \((x,y)\) som knytter data til klasse. Dersom vi antar at hypotesen er en lineær funksjon og at dataene kun har to egenskaper kan vi plotte hypotesen som en linje gjennom datapunktene. For hvert nye treningseksempel vil $\theta$-verdiene justeres og linjen vil tilpasses og følge datapunktene som angir en av klassene bedre. Etter at funksjonen er trent på en rekke treningseksempler vil linjen forhåpentligvis danne et så klart skille som mulig mellom datapunktene som utgir de to klassene {\color{red} graf?}.
+En vellykket hypotese vekter $\theta$-verdiene slik at algoritmen gir de beste mulige resultatene. Denne vekttingen tilsvarer det å finne hvilke egenskaper i dataene som er de viktigste for å angi hvilken klasse dataeksempelet tilhører. Så hvordan velger man disse $\theta$-verdiene? Vi ønsker $\theta$-verdier slik at hypotesen \(h_\theta(x)\) er nære klassen $y$, for treningseksemplene \((x,y)\). Treningseksemplene  \((x,y)\) representerer eksempelkoblinger mellom data og klasse. Dersom vi antar at hypotesen er en lineær funksjon og at dataene kun har to egenskaper, kan vi plotte hypotesen som en linje gjennom datapunktene. For hvert nye treningseksempel algoritmen prosesserer vil $\theta$-verdiene justeres og linjen vil tilpasses til å følge datapunktene som angir en av de to klassene bedre. Etter at funksjonen er trent på en rekke treningseksempler vil linjen forhåpentligvis danne et klart skille mellom datapunktene som utgir de to klassene (se figur \ref{figure:separator}).
 
-Det er vanskelig for oss å forestille oss en separator som opererer i mer enn tre dimensjoner. Heldigvis kommer matematikken til vår hjelp da den ikke bryr seg om våre visuelle begrensninger og allikevel fungerer i høyere dimensjoner. Så vi tror at en lineær modell bør få sjansen, men hvilken algoritme bør vi benytte? 
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = left,
+    xlabel = $x_0$,
+    ylabel = {$x_1$},
+]
+\addplot[
+    only marks,
+    color=blue,
+    mark=square,
+    ]
+    coordinates {
+    (0.2,0.7)(0.2,0.5)(0.2,0.6)(0.3,0.8)(0.3,0.6)(0.3,0.75)(0.4,0.8)(0.4,0.68)
+    };
+\addlegendentry{Sveip venstre}
+\addplot[
+    only marks,
+    color=red,
+    mark=square,
+    ]
+    coordinates {
+    (0.55,0.4)(0.4,0.25)(0.7,0.2)(0.5,0.2)(0.6,0.2)(0.8,0.3)(0.6,0.3)(0.75,0.3)(0.8,0.4)(0.68,0.4)
+    };
+\addlegendentry{Sveip høyre}
+\addplot [
+    domain=0:1, 
+    samples=100, 
+    color=black,
+]
+{0.8*x};
+\addlegendentry{\(h_\theta(x)\)}
+\end{axis}
+\end{tikzpicture}
+\caption{Plot av en lineær hypotese som deler datapunktene i to tilhørende klasser.}
+\label{figure:separator}
+\end{figure}
+
+Separatoren i figur \ref{figure:separator} er en linje i to dimensjoner. En separator i tre dimensjoner vil danne et plan. Det blir deretter vanskelig for oss å forestille oss en separator som opererer i mer enn tre dimensjoner. Heldigvis kommer matematikken til vår hjelp da den ikke bryr seg om våre visuelle begrensninger og fungerer like godt i 128 dimensjoner som i tre. Vi har konkludert med at en lineær modell bør få sjansen til å skille dataeksemplene våre, men hvilken algoritme bør vi benytte? To lignende, mye brukte og robuste teknikker er logistisk regresjon og støttevektormaskiner.
 
 \subsubsection*{Logistisk regresjon}
 I logistisk regresjon modelleres sannsynlighetene som beskriver ulike utfall av en logistisk sigmoid-funksjon som gir verdier i området \([0,1]\). Figur \ref{figure:sigmoid} viser den generelle sigmoid-funksjonen. Vi ser at ved større positive x-verdier gir funksjonen et resultat nære 1, mens for større negative verdier gir funksjonen et resultat nære 0.
@@ -212,14 +252,14 @@ g(x) = \frac{1}{1 + e^{-x}}
 
 La oss si vi har to mulige klasser, \(y \in \{0,1\}\). Hvis \( h_\theta(x) \geq  0.5\), gjetter vi at klassen \(y = 1\). Hvis \( h_\theta(x) < 0.5\), gjetter vi \(y = 0\).
 
-Når vi nå kombinerer (\ref{eq:hypotese-kompakt}) og (\ref{eq:sigmoid}) får vi den logistiske hypotesen:
+Når vi nå kombinerer (\ref{eq:hypotese-kompakt}) og (\ref{eq:sigmoid}) får vi den logistiske hypotesen \ref{eq:logistic}.
 
 \begin{equation}
 h_\theta(x) = \frac{1}{1 + e^{-\theta^{T}x}}
 \label{eq:logistic}
 \end{equation}
 
-Igjen representerer $\theta$ vektingen av egenskapene $x$ i treningsdataene. For å tilpasse $\theta$-verdiene er strategien å minimere en kostnadsfunksjon definert av forskjellen mellom hva hypotesen gjetter og hva som var det riktige svaret. Kostnadsfunksjonen er en variant av minste kvadrats metode {\color{red}ref Kreyzig(?)} og er definert som: 
+Igjen representerer $\theta$ vektingen av egenskapene $x$ i treningsdataene. For å tilpasse $\theta$-verdiene er strategien å minimere en kostnadsfunksjon definert av forskjellen mellom hva hypotesen gjetter og hva som var det riktige svaret. Kostnadsfunksjonen er en variant av minste kvadrats metode {\color{red}ref Kreyzig(?)} \ref{eq:minimize}. 
 
 \begin{equation}
 J(\theta) = 
@@ -227,19 +267,19 @@ J(\theta) =
 \label{eq:minimize}
 \end{equation}
 
-For å miniere denne kostnadsfunksjonen brukes en oppdateringsregel. Regelen oppdaterer egenskapsvektoren $\theta$ ved å trekke fra resultatet fra den partiellderiverte av kostnadsfunksjonen, dempet av en faktor $\alpha$:
+For å minimere denne kostnadsfunksjonen brukes en oppdateringsregel. Regelen oppdaterer egenskapsvektoren $\theta$ ved å trekke fra resultatet fra den partiellderiverte av kostnadsfunksjonen, dempet av en faktor $\alpha$:
 
 \begin{equation}
 \theta_j \leftarrow \theta_j - \alpha \frac{\delta}{\delta\theta_j}J(\theta)
 \label{eq:gradient}
 \end{equation}
 
-Ettersom den deriverte i et gitt punkt er brattheten til kurven i det punktet vil denne oppdateringen tilsvare å stadig ta mindre steg i den retningen som fører mot en lavere verdi på kurven. På en to-dimensjonell graf vil det si å følge plottet nedover mot et bunnpunkt, men algoritmen fungerer på samme vis i høyere dimensjoner. Algoritmen kalles "gradient descent" og brukes i flere maskinlærings-sammenhenger for å finne minimumsverdier.
+Ettersom den deriverte i et gitt punkt er brattheten til kurven i det punktet vil denne oppdateringen tilsvare å stadig ta mindre steg i den retningen som fører mot en lavere verdi på kurven. På en to-dimensjonell graf vil det si å følge plottet nedover mot et bunnpunkt, men algoritmen fungerer på samme vis i høyere dimensjoner. Denne oppdateringsregelen kalles gjerne "gradient descent" og brukes i flere maskinlærings-sammenhenger for å finne minimumsverdier.
 
 For å lære å skille mellom de 10 ulike klassene benyttes strategien "en-mot-resten". For hver klasse trenes det en egen hypotese som best mulig skiller mellom denne klassen og alle de andre. I vårt tilfelle betyr dette at vi trener 10 hypoteser. Når ny data kommer inn til det trente systemet velges den hypotesen blant de 10 som gir den høyeste sannsynligheten for en viss klassifisering og dermed er mest sikker på å ha funnet det riktige svaret.
 
 \subsubsection*{Støttevektormaskiner (SVM)}
-Støttevektormaskiner er en gruppe overvåkede maskinlæringsalgoritmer som kan brukes til å løse klassifiseringsproblemer. De er kjent for å være effektive i problemområder med mange dimensjoner og kan oppnå gode resultater selv når antallet dimensjoner er høyere enn treningseksemplene. De bruker mindre plass i minnet enn andre tilnærminger og kan tilpasses til å løse en rekke forskjellige problemer. En ulempe med SVM'er er at de ikke tilbyr direkte estimater på hvor sikker klassifiseringen er.
+Støttevektormaskiner er en gruppe overvåkede maskinlæringsalgoritmer som kan brukes til å løse klassifiseringsproblemer. De er kjent for å være effektive i problemområder med mange dimensjoner og kan oppnå gode resultater selv når antallet dimensjoner er høyere enn treningseksemplene. De bruker mindre plass i minnet enn andre tilnærminger og kan tilpasses til å løse en rekke forskjellige problemer. En ulempe med SVM'er er at de ikke tilbyr direkte estimater på hvor sikker klassifiseringen er og at de i utgangspunktet bare kan skille mellom to klasser.
 
 En støttevektormaskin danner et hyperplan eller et sett av hyperplan i et høydimensjonelt rom. Disse hyperplanene brukes for å danne skiller mellom data og kan dermed brukes til klassifisering. En optimal deling oppnås av hyperplanet som har den største avstanden til det nærmeste datapunktet til en klasse. Generelt vil den største marginen mellom klassene senke klassifikatorens feilaktighet.
 
