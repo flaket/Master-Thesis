@@ -1,10 +1,10 @@
 %%=========================================
-\section{Gestegjenkjennelse med fotodioder}
+\subsection{Case 1 - Gestegjenkjennelse med fotodioder}
 %%=========================================
-\subsection{Introduksjon}
+\subsection**{Introduksjon}
 Når hjemmet ditt om noen år tilbyr kontroll over ikke bare lys og temperatur, men garasjeporter, persienner, tv-er, radioer, låsene på døra og statusen til kjøkkenapparater, kan det være en utfordring å tilby gode interaksjonsmetoder. Løsningen på dette har hittil enten vært å la kontrollknappene være en del av apparatet eller å samle de i et panel på veggen, i en fjernkontroll eller i en app. Med et økende antall styrbare enheter blir det raskt upraktisk å kun ha kontroll dersom man fysisk befinner seg ved apparatet. Dermed kan det virke fornuftig å tilby kontroll gjennom en fjernkontroll eller en app. Men vil man alltid ha kontroll på hvor denne mobilen enheten befinner seg? I tillegg må en fjernkontroll eller app også designes godt for å unngå forvirring med et vanskelig brukergrensesnitt. Vi har alle vært uerfarne brukere av en ny fjernkontroll og opplevd større eller mindre problemer med å utøve kontroll over det aktuelle apparatet. Så kanskje det ikke er en dum idé å tilby et fast sted i rommet der kontrollen over aktuelle enheter er samlet? Det tradisjonelle panelet med knapper og dimmere er ikke bare stygt, men det er i tillegg vanskelig å vite hvilke knapper som hører til hvilken funksjonalitet (se figur \ref{fig:panel}). Det ideelle hadde kanskje vært å tilby et fast sted i rommet der kontroll kan utføres, men som er minimalistisk og allikevel kan styre et stort antall enheter. Hva hvis brukere kunne utføre enkle gester i luften foran en svært liten sensor, strategisk plassert på veggen?
  
-Idéen om å kontrollere enheter ved hjelp av gester er ikke ny {\color{red} refererfef}. Tilnærmingen i disse prosjektene er kameraer som måler farger og dybde, samt avanserte algoritmer for datasyn. Sammen kan disse prosessere informasjonen og danne grunnlaget for et system som kan gjenkjenne kompliserte gester. Desverre er bruken av kameraer et problem i hjemmescenariet. {\color{red} Ref og ref} har vist at brukere har sterke motsetninger mot overvåking i sitt eget hjem. Selv dersom det kan garanteres at dataene fra kameraene holdes lokalt kan følelsen av at personvernet er utsatt være nok til at brukerene vil holde seg unna. Vi ønsker en alternativ måte å interagere med funksjonaliteten i hjemmet. Den skal være naturlig, effektiv og må garantere at privatliv og personvern blir ivaretatt.
+Idéen om å kontrollere enheter ved hjelp av gester er ikke ny {\color{red} referanse}. Tilnærmingen i disse prosjektene er kameraer som måler farger og dybde, samt avanserte algoritmer for datasyn. Sammen kan disse prosessere informasjonen og danne grunnlaget for et system som kan gjenkjenne kompliserte gester. Desverre er bruken av kameraer et problem i hjemmescenariet. {\color{red} Ref og ref} har vist at brukere har sterke motsetninger mot overvåking i sitt eget hjem. Selv dersom det kan garanteres at dataene fra kameraene holdes lokalt kan følelsen av at personvernet er utsatt være nok til at brukerene vil holde seg unna. Vi ønsker en alternativ måte å interagere med funksjonaliteten i hjemmet. Den skal være naturlig, effektiv og må garantere at privatliv og personvern blir ivaretatt.
 
 \begin{figure}
 \centering
@@ -20,7 +20,7 @@ Dette kapittelet har følgende bidrag:
 \item Jeg viser at det holder med et titalls treningseksempler fra hver gest for å oppnå gode resultater med lineære modeller og at det med 50 eksempler oppnås en suksessrate på 96\% (\ref{ch:2.resultater}).
 \end{itemize}
 
-\subsection{Interaksjon gjennom gester}
+\subsection*{Interaksjon gjennom gester}
 \label{ch:2.minide}
 {\color{red}PING: Maskinlæring kan benyttes for å gi enkle sensorer en svært god forståelse av gester.}
 Dette avsnittet presenterer hovedidéen for dette kapitellet. 
@@ -98,13 +98,13 @@ Maskinlæring handler om å la maskinen lære fra data. Dette kan enten være et
 \label{fig:gester}
 \end{figure}
 
-\subsection{Detaljer}
-\subsubsection{Hardware}
+\subsection*{Detaljer}
+\subsubsection*{Hardware}
 Sensoren som benyttes i denne prototypen er APDS-9960 fra Avago Technologies. Sensoren tilbyr måling av lys og farge, oppdagelse av nærhet og gestegjenkjennelse\footnote{Kapittel 4 utforsker bruksområder for funksjonaliteten rundt lys, farge og nærhet.}. Innpakningen er svært liten på kun 3.94 * 2.36 * 1.35 mm. Selve gestesensoren består av fire fotodioder som merker et reflektert infrarødt signal utsendt fra en LED. Fotodiodene er vinklet litt forskjellig slik at de plukker opp refleksjoner på litt forskjellige steder. Den benytter resultater fra nærhetsdetektoren for å automatisk aktiveres når et objekt er innen rekkevidde. I tilegg brukes måling av lys for å tilpasse de infrarøde målingene til lysnivået i omgivelsene. Dataene dannes som 32-bit datasett og kommuniseres over I2C-protokollen til en mikrokontroller. Gestesensoren kan selv håndtere forståelse av gester som passerer opp, ned, mot venstre eller mot høyre over sensoren, men denne funksjonaliteten tar vi ikke i bruk her {\color{red} ref apds9960-dokumentasjonen.}.
 
 Prototypen er utviklet med Sparkfun's innpakning av APDS9960-sensoren\footnote{https://www.sparkfun.com/products/12787}. Denne brettet gjør APDS9960-sensoren tilgjengelig for enkel prototyping ved å bryte ut ulike pinner. {\color{red} bilde av sparkfun-brikken som peker ut hvilken del som er apds9960.} I tillegg har de gjort tilgjengelig programvare til Arduino-plattformen\footnote{http://www.arduino.cc/} så utviklere kommer raskt i gang. De ulike programmene som kan lastes opp til en Arduino gir tilgang til de forskjellige funksjonalitetene hos APDS-9960-brikken.
 
-\subsubsection{Dataprosessering}
+\subsubsection*{Dataprosessering}
 Seriell data sendes fra mikrokontrolleren til datamaskinen som lytter på riktig port. Sensoren sender data så lenge ir-signalet reflekteres. Dette betyr at en gest som tar lengre tid skaper mer data. Et rolig sveip over sensoren med hele hånda kan skape 100-200 datapunkter. Et raskt flikk med to fingre skaper 16-32 datapunkter. En gest som involverer å holde hånda foran sensoren i et sekund eller mer skaper flere hundre datapunkter. For å benytte de planlagte klassifiseringsteknikkene må hvert av treningseksemplene må ha like mange egenskaper.
 
 Det finnes ulike metoder for å løse dette problemet. En av de er å bestemme et øvre antall maksimale egenskaper som skal tas med. Inputeksempler som ikke har tilstrekkelig med egenskaper blir paddet med 0-verdier. Å sette en maksgrense på egenskaper kan føre til at man mister viktig data fra gester som tar lengre tid å utføre. For et inputeksempel fra en rask gest vil mange egenskaper være 0. Dette kan påvirke effektiviteten til læringsalgoritmen. Et annet alternativ er å velge et fast antall egenskaper vært inputeksempel skal ha og så knytte inputeksempelet til denne egenskapervektoren. Dersom inputdataene har få datapunkter blir egenskapsvektoren sparsom, med dataverdiene spredt jevnt utover og med 0-verdier i mellom. Dersom inputdataene består av mange datapunkter vil hver egenskap i egenskapsvektoren være et gjennomsnitt av en valgt mengde datapunkter.
@@ -129,7 +129,7 @@ Jeg valgte å benytte denne sistnevnte teknikken og lagde vektorer med 128 egens
 
 {\color{red} ref process-data.py/trim-data}
 
-\subsubsection{Maskinlæring: Klassifisering}
+\subsubsection*{Maskinlæring: Klassifisering}
 La oss begynne med en definisjon på maskinlæring fra Arthur Samuel (1959): "Maskinlæring gir datamaskiner evnen til å lære uten å bli eksplisitt programmert."
 
 Denne definisjonen er over 50 år gammel, men den fanger hva vi er ute etter. Vi er interessert i å få datamaskinene til å lære å gjøre nyttige ting uten å behøve å fortelle dem eksplisitt hvordan hver enkelt oppgave skal utføres. Dette er nødvendig da det med mye og kompleks data raskt blir umulig for en programmerer å beskrive alle deloppgavene som må utføres.
@@ -221,8 +221,8 @@ En vellykket hypotese vekter $\theta$-verdiene slik at algoritmen gir de beste m
 
 Separatoren i figur \ref{figure:separator} er en linje i to dimensjoner. En separator i tre dimensjoner vil danne et plan. Det blir deretter vanskelig for oss å forestille oss en separator som opererer i mer enn tre dimensjoner. Heldigvis kommer matematikken til vår hjelp da den ikke bryr seg om våre visuelle begrensninger og fungerer like godt i 128 dimensjoner som i tre. Vi har konkludert med at en lineær modell bør få sjansen til å skille dataeksemplene våre, men hvilken algoritme bør vi benytte? To lignende, mye brukte og robuste teknikker er logistisk regresjon og støttevektormaskiner.
 
-\subsubsection*{Logistisk regresjon}
-I logistisk regresjon modelleres sannsynlighetene som beskriver ulike utfall av en logistisk sigmoid-funksjon som gir verdier i området \([0,1]\). Figur \ref{figure:sigmoid} viser den generelle sigmoid-funksjonen. Vi ser at ved større positive x-verdier gir funksjonen et resultat nære 1, mens for større negative verdier gir funksjonen et resultat nære 0.
+\subsubsection**{Logistisk regresjon}
+I logistisk regresjon modelleres sannsynlighetene som beskriver ulike utfall av en logistisk sigmoid-funksjon. Denne funksjonen tar en hvilken som helst input-verdi og gir en output-verdi i området \([0,1]\). Figur \ref{figure:sigmoid} viser den generelle sigmoid-funksjonen. Vi ser at ved større positive x-verdier gir funksjonen et resultat nære 1, mens for større negative verdier gir funksjonen et resultat nære 0.
 
 \begin{equation}
 g(x) = \frac{1}{1 + e^{-x}}
@@ -252,53 +252,170 @@ g(x) = \frac{1}{1 + e^{-x}}
 
 La oss si vi har to mulige klasser, \(y \in \{0,1\}\). Hvis \( h_\theta(x) \geq  0.5\), gjetter vi at klassen \(y = 1\). Hvis \( h_\theta(x) < 0.5\), gjetter vi \(y = 0\).
 
-Når vi nå kombinerer (\ref{eq:hypotese-kompakt}) og (\ref{eq:sigmoid}) får vi den logistiske hypotesen \ref{eq:logistic}.
+Når vi nå kombinerer (\ref{eq:hypotese-kompakt}) og (\ref{eq:sigmoid}) får vi den logistiske hypotesen (\ref{eq:logistic}).
 
 \begin{equation}
 h_\theta(x) = \frac{1}{1 + e^{-\theta^{T}x}}
 \label{eq:logistic}
 \end{equation}
 
-Igjen representerer $\theta$ vektingen av egenskapene $x$ i treningsdataene. For å tilpasse $\theta$-verdiene er strategien å minimere en kostnadsfunksjon definert av forskjellen mellom hva hypotesen gjetter og hva som var det riktige svaret. Kostnadsfunksjonen er en variant av minste kvadrats metode {\color{red}ref Kreyzig(?)} \ref{eq:minimize}. 
+Igjen representerer $\theta$ vektingen av egenskapene $x$ i treningsdataene. (\ref{eq:cost}) viser formelen for logistisk regresjon.
 
 \begin{equation}
 J(\theta) = 
-    \frac{1}{2m} \sum_{i=1}^{m} (h_\theta(x^{(i)})-y^{(i)})^2
-\label{eq:minimize}
+    \frac{1}{m} \sum_{i=1}^{m} cost(h_\theta(x^{(i)}), y)
+\label{eq:cost}
 \end{equation}
 
-For å minimere denne kostnadsfunksjonen brukes en oppdateringsregel. Regelen oppdaterer egenskapsvektoren $\theta$ ved å trekke fra resultatet fra den partiellderiverte av kostnadsfunksjonen, dempet av en faktor $\alpha$:
+Vi ser at $J(\theta)$ er et gjennomsnitt av en kostnadsfunksjon, definert av hypotesen til hvert treningseksempel og den tilhørende korrekte klassen. Kostnadsfunksjonen (\ref{eq:costdetail}) er definert med delt forskrift slik at kostnaden er 0 dersom klassen er 1 og hypotesen er 1, men dersom klassen er 1 og hypotesen går mot 0, går kostnaden mot uendelig. Den delte forskriften gjør at det samme gjelder for det motsatte tilfellet, der kostnaden er lav dersom klassen er 0 og hypotesen gjetter 0, men øker mot uendelig dersom hypotesen går mot 1.
+
+\begin{equation}
+    cost(h_\theta(x^{(i)}), y) = \begin{cases}
+    -log(h_\theta(x)), & \text{hvis $y=1$}.\\
+    -log(1-h_\theta(x), & \text{hvis $y=0$}.
+  \end{cases}
+  \label{eq:costdetail}
+\end{equation}
+
+For å tilpasse $\theta$-verdiene er strategien å minimere kostnadsfunksjonen (\ref{eq:costdetail}). Dette gjøres ved å benytte en oppdateringsregel. Regelen oppdaterer egenskapsvektoren $\theta$ ved å trekke fra resultatet fra den partiellderiverte av kostnadsfunksjonen, dempet av en faktor $\alpha$ (\ref{eq:gradient}).
 
 \begin{equation}
 \theta_j \leftarrow \theta_j - \alpha \frac{\delta}{\delta\theta_j}J(\theta)
 \label{eq:gradient}
 \end{equation}
 
-Ettersom den deriverte i et gitt punkt er brattheten til kurven i det punktet vil denne oppdateringen tilsvare å stadig ta mindre steg i den retningen som fører mot en lavere verdi på kurven. På en to-dimensjonell graf vil det si å følge plottet nedover mot et bunnpunkt, men algoritmen fungerer på samme vis i høyere dimensjoner. Denne oppdateringsregelen kalles gjerne "gradient descent" og brukes i flere maskinlærings-sammenhenger for å finne minimumsverdier.
+Ettersom den deriverte i et gitt punkt kan sees på som brattheten til kurven i det punktet vil denne oppdateringen tilsvare å stadig ta mindre steg i den retningen som fører mot en lavere verdi på kurven. På en to-dimensjonell graf vil det si å følge plottet nedover mot et bunnpunkt, men algoritmen fungerer på samme vis i høyere dimensjoner. Denne oppdateringsregelen kalles "gradient descent" og brukes i flere maskinlærings-sammenhenger for å finne minimumsverdier.
 
-For å lære å skille mellom de 10 ulike klassene benyttes strategien "en-mot-resten". For hver klasse trenes det en egen hypotese som best mulig skiller mellom denne klassen og alle de andre. I vårt tilfelle betyr dette at vi trener 10 hypoteser. Når ny data kommer inn til det trente systemet velges den hypotesen blant de 10 som gir den høyeste sannsynligheten for en viss klassifisering og dermed er mest sikker på å ha funnet det riktige svaret.
+Etter at $\theta$-verdiene er tilpasset av treningsdata kan modellen gjette hvilken klasse et nytt datapunkt tilhører ved p benytte (\ref{eq:logistic}). For å lære å skille mellom de 10 ulike klassene benyttes strategien "en-mot-resten". For hver klasse trenes det en egen hypotese som best mulig skiller mellom denne klassen og alle de andre. I vårt tilfelle betyr dette at vi trener 10 hypoteser. Når ny data kommer inn til det trente systemet velges den hypotesen blant de 10 som gir den høyeste sannsynligheten for en viss klassifisering og dermed er mest sikker på å ha funnet det riktige svaret. I tillegg til å fortelle hvilken klasse dataeksempelet tilhører kan logistisk regresjon fortelle hvor sikker klassifiseringen er. Dette er en god egenskap som støttevektormaskiner mangler.
 
-\subsubsection*{Støttevektormaskiner (SVM)}
-Støttevektormaskiner er en gruppe overvåkede maskinlæringsalgoritmer som kan brukes til å løse klassifiseringsproblemer. De er kjent for å være effektive i problemområder med mange dimensjoner og kan oppnå gode resultater selv når antallet dimensjoner er høyere enn treningseksemplene. De bruker mindre plass i minnet enn andre tilnærminger og kan tilpasses til å løse en rekke forskjellige problemer. En ulempe med SVM'er er at de ikke tilbyr direkte estimater på hvor sikker klassifiseringen er og at de i utgangspunktet bare kan skille mellom to klasser.
+\subsubsection**{Støttevektormaskiner (SVM)}
+Støttevektormaskiner er en annen gruppe med maskinlæringsalgoritmer som kan brukes til å løse klassifiseringsproblemer. De er kjent for å være effektive i problemområder med mange dimensjoner og kan oppnå gode resultater selv når antallet dimensjoner er høyere enn antall treningseksemplene. De bruker mindre plass i minnet enn andre tilnærminger og kan tilpasses til å løse en rekke forskjellige problemer. To ulemper med SVM-er er at de ikke tilbyr direkte estimater på hvor sikker klassifiseringen er og at de i utgangspunktet bare kan skille mellom to klasser.
 
-En støttevektormaskin danner et hyperplan eller et sett av hyperplan i et høydimensjonelt rom. Disse hyperplanene brukes for å danne skiller mellom data og kan dermed brukes til klassifisering. En optimal deling oppnås av hyperplanet som har den største avstanden til det nærmeste datapunktet til en klasse. Generelt vil den største marginen mellom klassene senke klassifikatorens feilaktighet.
+I figur \ref{figure:separator} så vi en lineær hypotese som tydelig delte datapunktene i to klasser. I figuren ligger den separerende hypotesen nærmere "sveip høyre"-datapunktene. Dette er vist som et resultat av at det er flere treningseksempler av denne typen og dermed har den lineære metoden produsert en hypotese som ligger nærmere disse datapunktene. Vi kan også forstå at det må være et uendelig antall forskjellige hypoteser som kan dele datapunktene, men at en hypotese som ligger midt mellom de to klassene av datapunkter vil være den mest robuste. Støttevektormaskiner benytter nettopp denne intuisjonen for å finne en optimal hypotese. Med støttevektormaskiner kalles separatoren et hyperplan som kan danne skiller i høydimensjonelle rom. En optimal deling oppnås av det hyperplanet som har den største avstanden til det nærmeste datapunktet hos hver klasse. Denne strategien om å finne den største marginen mellom klassene senker generelt klassifikatorens feilaktighet. Figur \ref{figure:svm} viser et slikt optimalt hyperplan som befinner seg der hvor marginene til hver klasse er maksimal og like stor.
 
-Math.
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = left,
+    xlabel = $x_0$,
+    ylabel = {$x_1$},
+]
+\addplot[
+    only marks,
+    color=blue,
+    mark=square,
+    ]
+    coordinates {
+    (0.2,0.7)(0.2,0.5)(0.2,0.6)(0.3,0.8)(0.3,0.6)(0.3,0.75)(0.4,0.8)(0.4,0.68)
+    };
+\addplot[
+    only marks,
+    color=red,
+    mark=square,
+    ]
+    coordinates {
+    (0.7,0.2)(0.5,0.2)(0.6,0.2)(0.8,0.3)(0.6,0.3)(0.75,0.3)(0.8,0.4)(0.68,0.4)
+    };
+\addplot [
+    domain=0:0.8, 
+    samples=100, 
+    color=green,
+]
+{x + 0.28};
+\addplot [
+    domain=0.3:1, 
+    samples=100, 
+    color=green,
+]
+{x - 0.28};
+\addplot [
+    domain=0:1, 
+    samples=100, 
+    color=black,
+]
+{x};
+\end{axis}
+\end{tikzpicture}
+\caption{Plot som viser det optimale hyperplanet i svart og de to støttevektorene i grønt.}
+\label{figure:svm}
+\end{figure}
 
-Plot.
+Treningen av støttevektormaskiner følger det samme mønsteret som logistisk regresjon, men skiller seg på å ha en annen hypotesen og kostnadsfunksjon. Hypotesen er det lineære indreproduktet vi så fra introduksjonen om klassifisering (\ref{eq:hypotese-kompakt}). Kostnadsfunksjonen er enklest forstått gjennom et plot. (\ref{figure:svmcost}) viser de to kostnadsfunksjonene. Dersom klassen $y=1$ ønsker vi at hypotesen $\theta^{T}x \geq 1$. Dersom klassen $y=0$ ønsker vi at hypotesen $\theta^{T}x \leq -1$
 
-For å håndtere klassifisering av flere klasser finnes det ulike strategier.
+\begin{figure}[h!]
+\begin{subfigure}{0.5\textwidth}
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = center,
+    xlabel = $\theta^{T}x$,
+    xmin=-2, xmax=2,
+    ymin=0, ymax=5,
+]
+\addplot [
+    domain=-2:2, 
+    samples=100, 
+    color=red,
+]
+{1 + x};
+\addplot [
+    domain=-2:-1, 
+    samples=100, 
+    color=red,
+]
+{0};
+\legend{$cost_0(\theta^{T}x)$}
+\end{axis}
+\end{tikzpicture}
+\end{subfigure}
+\begin{subfigure}{0.5\textwidth}
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = center,
+    xlabel = $\theta^{T}x$,
+    xmin=-2, xmax=2,
+    ymin=0, ymax=5,
+]
+%\addlegendentry{$cost_0(\theta^{T}x)$}
+\addplot [
+    domain=-2:2, 
+    samples=100, 
+    color=blue,
+]
+{1 - x};
+\addplot [
+    domain=1:2, 
+    samples=100, 
+    color=blue,
+]
+{0};
+\legend{$cost_1(\theta^{T}x)$}
+\end{axis}
+\end{tikzpicture}
+\end{subfigure}
+\label{figure:svmcost}
+\caption{Plot av støttevektormaskinens kostnadsfunksjoner.}
+\end{figure}
 
-En-mot-en (Knerr et al., 1990). Dersom n er antallet klasser trenes n * n-1 / 2 klassifiserere. Hver av disse trenes med data fra to klasser. 10*9 / 2 gir 45.
+Treningen består dermed igjen av å minimere (\ref{eq:svmcost}) med den samme oppdateringsregelen som for logistisk regresjon (\ref{eq:gradient}), men med en ekstra, justerbar parameter $C$ som avgjør hvor mye man ønsker å unngå å feilklassifiere hvert treningseksempel. Med en stor $C$-verdi vil optimaliseringen velge et hyperplan med mindre marginer dersom dette hyperplanet gjør en bedre jobb på å få alle treningsdataene klassifisert riktig. En lav $C$-verdi lar optimaliseringen finne et hyperplan med større marginer, selv dersom dette hyperplanet feilklassifiserer flere datapunkt.
 
-En-mot-resten, trener n klassemodeller, gir 10.
+\begin{equation}
+J(\theta) = 
+    C \sum_{i=1}^{m} y^{(i)}cost_1(h_\theta(x^{(i)})) + (1-y^{(i)})cost_0(h_\theta(x^{(i)}))
+\label{eq:svmcost}
+\end{equation}
 
-\subsubsection{Eksperimentsutførelse}
-For å trene klassifikatorer kreves data. Arduinoen kobles til maskinen med en usb-kabel. Arduino-biblioteket har blitt forandret minimalt til å ikke selv forstå sensordataene, men i stedet dytte dem videre til datamaskinen. Et Python-script åpner tilkoblingen til å lytte på en seriell port. Porten åpnes i noen sekunder og ber om at en gest utføres {\color{red} ref process-data.py}. Jeg gjennomførte 50 utførelser av hver av de 10 gestene og lagret dataene for hver gest i hver sin csv-fil. Med dataene for hver gest lagret i forskjellige filer kan disse kombineres slik man ønsker for å trene systemet til å skille mellom 2,3, eller opp til 10 gester. 
+Den typen SVM vi har presentert her er en såkalt lineær SVM eller en SVM uten kjerne. Ved å benytte et såkalt "kernel trick" kan SVM-er også modellere ikke-lineære funksjoner. Dette gjør SVM-er svært fleksible til å håndtere ulike data. I vårt prosjekt er vi kun interessert i de lineære modellene så vi går ikke nærmere inn på dette her. For å håndtere klassifisering av flere klasser benyttes gjerne den samme "en-mot-resten"-strategien som i logistisk regresjon. Denne ender altså opp med å trene $n$ klassemodeller og modellen med det beste resultatet benyttes. I i vårt tilfelle betyr dette at 10 modeller må trenes.
 
-Splitte dataene, trene med 75\% og teste med 25\%. Dette er en viktig øvelse for å ikke spesialisere modellen til dataene. Dersom man trener på hele datasettet og tester på det samme settet er det en sjanse for at man har tilpasset modellen for mye til datasettet og ikke funnet den underliggende, generelle modellen. Dette kalles "overfitting". {\color{red} ref learning.py}
+\subsubsection*{Eksperimentsutførelse}
+{\color{red}Dette avsnittet må kanskje skrives ut mye mer for å forklare stegvis alt som er gjort?}
+For å trene disse klassifikatorene kreves data. For å koble Arduinoen opp til sensoren fulgte jeg SparkFun's oppkoblingsguide\footnote{https://learn.sparkfun.com/tutorials/apds-9960-rgb-and-gesture-sensor-hookup-guide?\_ga\=1.23518458.1114877585.1417681856}. Etter at Arduinoen er koblet til sensoren og til datamaskinen ved en usb-kabel kan man laste opp koden som trengs for å drive sensoren. Biblioteket SparkFun tilbyr ble tilpasset til å ikke selv forstå sensordataene, men i stedet dytte dem videre til datamaskinen. Når Python-scriptet{\color{red} ref process-data.py} kjøres på datamaskinen åpnes tilkoblingen til å lytte på den riktige serielle porten. Porten åpnes i noen sekunder og ber om at en gest utføres. Jeg gjennomførte 50 utførelser av hver av de 10 gestene\ref{fig:gester}, for totalt 500 datapunkter. Dataene fra hver gest ble lagret i individuelle filer i kommaseparert format. Med dataene for hver gest lagret i forskjellige filer kan disse kombineres slik man ønsker for å trene systemet til å skille mellom 2,3, eller opp til 10 gester. 
 
-\subsubsection{Resultater}
+Python-scriptet {\color{red} ref learning.py} utfører maskinlæringen. Dataene blir lastet inn fra de aktuelle csv-filene og de aktuelle klassene opprettes. Man splitter så dataene i et treningssett og et testsett. Splittingen var 75\% til trening og 25\% til testing. Dette er et viktig steg i prosessen for å ikke spesialisere modellen til dataene. Dersom man trener på hele datasettet og tester på det samme settet er det en sjanse for at man har tilpasset modellen for mye til datasettet og ikke funnet den underliggende, generelle modellen. Hver modell blir trent og testet 100 ganger med et tilfeldig utgangspunkt hver gang, og sluttresultatet er et gjennomsnitt av disse.
+
+\subsubsection*{Resultater}
 \label{ch:2.resultater}
 \begin{table}[h!]
 \centering
@@ -316,13 +433,6 @@ Splitte dataene, trene med 75\% og teste med 25\%. Dette er en viktig øvelse fo
 \caption{Gjennomsnittsresultater for klassifisering der modellene er trent og testet 100 ganger med tilfeldige utgangspunkt.}
 \label{table:results}
 \end{table}
-
-%http://www.csie.ntu.edu.tw/~cjlin/papers/libsvm.pdf
-%http://www.csie.ntu.edu.tw/~cjlin/papers/liblinear.pdf
-%http://www.csie.ntu.edu.tw/~cjlin/papers/maxent_dual.pdf
-%http://www.farnell.com/datasheets/1801560.pdf
-
-96\% er et svært godt resultat og viser hvor godt enkle lineære modeller kan skille mellom denne typen data. Det er interessant å spørre seg om dette resultatet kunne blitt enda høyere. Jeg valgte derfor å gjøre det samme eksperimentet med en femtedel og halvparten av dataene. Dette for å se sammenhengen mellom forbedring i suksessrate og antall treningseksempler. Ettersom scikit-learn-biblioteket tilbyr en rekke algoritmer har jeg forsøkt andre tilnærminger enn lineære modeller og inkludert dem også. Figur\ref{figure:resultsgraf} viser resultatene for 100, 250 og 500 treningseksempler.
 
 \begin{figure}[h!]
 \centering
@@ -389,15 +499,18 @@ Splitte dataene, trene med 75\% og teste med 25\%. Dette er en viktig øvelse fo
 \caption{Resultatsutvikling for et utvalg algoritmer.}
 \end{figure}
 
-\subsection{Relatert arbeid}
-{\color{red} 1-2 sider, utforskning av hva andre har gjort... Maskinlæring på sensordata fra gester (video)}
+\subsection*{Relatert arbeid}
+{\color{red} Maskinlæring på sensordata fra gester, enkle sensorer i hjemmet, gester i hjemmet}
+%http://www.csie.ntu.edu.tw/~cjlin/papers/libsvm.pdf
+%http://www.csie.ntu.edu.tw/~cjlin/papers/liblinear.pdf
+%http://www.csie.ntu.edu.tw/~cjlin/papers/maxent_dual.pdf
+%http://www.farnell.com/datasheets/1801560.pdf
 
-\subsection{Konklusjoner og videre arbeid}
-Blablabla suksess!
+\subsection*{Konklusjoner og videre arbeid}
+Både logistisk regresjon og støttevektormaskin ga svært lovende resultater, som vist i tabell \ref{table:results}. 96\% er en meget høy suksessrate og viser hvor godt enkle, lineære modeller kan skille på denne typen data. Det ble så interessant å spørre seg om dette resultatet kunne blitt enda høyere. Jeg ønsket ikke å bruke mer tid på å lage flere treningseksempler, så i stedet utførte jeg treningen på nytt med færre treningseksempler, i håp om å kunne se en utviklingstrend. Det samme eksperimentet ble utført med en femtedel og halvparten av dataene for å danne et bilde av sammenhengen mellom forbedring i suksessrate og antall treningseksempler. Figur \ref{figure:resultsgraf} viser resultatene for 100, 250 og 500 treningseksempler. Ettersom biblioteket jeg benyttet for å implementere algoritmene tilbyr en rekke andre algoritmer forsøkte jeg noen andre tilnærminger enn lineære modeller og inkluderte dem også.
 
-I figur \ref{figure:resultsgraf} kan vi se at SVM'ene er i nærheten av 95\% allerede etter 250 treningseksempler og at de kun øker minimalt med 250 ekstra tilfeller. Dette tyder på at det trengs et svært antall ekstra treningseksempler for at algoritmene skal krype betydelig nærmere 100\%. De avanserte ExtraTrees og GradientBoost, benytter seg av kombinasjonsstrategier og flere teknikker. Det kan se ut som om spesielt GradientBoost kan fortsette å øke suksessraten betydelig med mer trening, men det er tvilsomt om den passerer SVM. Til sist nevnes k-næreste nabo, som begynner svakest av disse, men fremdeles har en sterk vekst mellom 250 og 500 tilfeller. Det hadde vært interessant å se utviklingen videre for denne enkle algoritmen.
+I figur \ref{figure:resultsgraf} kan vi se at SVM-ene er i nærheten av 95\% allerede etter 250 treningseksempler og at de kun øker minimalt med 250 ekstra tilfeller. Dette tyder på at det trengs et stort antall ekstra treningseksempler for at algoritmene skal krype betydelig nærmere 100\%. De mer avanserte algoritmene ExtraTrees og GradientBoost benytter seg av flere algoritmer under panelet og kombinerer disse. Det kan se ut som om spesielt GradientBoost kan fortsette å øke suksessraten betydelig med mer trening, men det er tvilsomt om den passerer SVM. Til sist nevnes k-nærmeste nabo (kNN), som begynner svakest av de utprøvde algoritmene, men fremdeles har en sterk vekst mellom 250 og 500 tilfeller. Det hadde vært interessant å se utviklingen videre for denne enkle algoritmen.
 
-Hva kan gjøres videre: online læring, flere gester (er det nyttig?), større egenskapvektor (enn 128) fordeler ulemper.
-
+Dette prosjektet har argumentert for at gester kan være en aktuell interaksjonsform i hjemmet, spesielt som en erstatning til store knappepaneler og desentralisert styringskontroll. Det har også vist at maskinlæring kan benyttes for å gi enkle sensorer en svært god forståelse av gester. Med en suksessrate på over 95\% i klassifiseringen av 10 ulike gester er denne teknikken svært interessant. Og med en suksessrate på over 85\% allerede etter kun 10 treningseksempler på hver gest, kan man forestille seg at brukere selv kan sette av 10 minutter til å trene et helt nytt og utrent system til å forstå sine egne gester. I et produkt kunne det vært aktuelt å tilby online-læring gjennom systemets levetid. Man kan med andre ord la systemet lære etter hvert som brukeren benytter systemet. Dette vil nødvendigvis kreve at brukeren har en mulighet til å gi tilbakemelding på når systemet gjettet riktig gest og når det gjettet feil.
 
 
