@@ -6,6 +6,7 @@
 \usepackage{subcaption}
 \usepackage{amsmath}
 \usepackage{subfiles}
+\usepackage{listings}
 \renewcommand\contentsname{Innhold}
 \renewcommand\refname{Referanser}
 \renewcommand\bibname{Bibliografi}
@@ -25,6 +26,8 @@
 %\newpage
 %\listoftables
 %\newpage
+%\lstlistoflistings
+%\newpage
 %\tableofcontents
 %\newpage
 %\setcounter{page}{0}
@@ -36,12 +39,12 @@
 %\include{kap04}
 %\include{kap05}
 %%=========================================
-%\appendix
-%\include{appendix}
+\appendix
+\include{appendix}
 %%=========================================
 \bibliographystyle{apa}
-%\addcontentsline{toc}{section}{\bibname}
+\addcontentsline{toc}{section}{\bibname}
 \bibliography{refs}
-%\include{akronymer}
+\include{akronymer}
 %%=========================================
 \end{document}

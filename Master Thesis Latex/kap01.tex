@@ -6,9 +6,16 @@ En vårdag noen år fram i tid våkner du av den sedvanlige alarmen som går av.
 
 Jeg forestiller meg at dette kan være et vanlig scenario i mange hjem noen år fram i tid. Teknologien utvikles stadig for å tilby automatiserte løsninger som er energieffektive og enklere å ta i bruk. Det er altså mange områder som kan forenkles og forbedres i hjemmet. Automasjon, energibesparing, hjelp til eldre og funksjonshemmede og enklere interaksjonsmetoder for alle.
 
-{\color{red}Mer motivasjon: hvorfor har jeg valgt å skrive om dette, hva godt kan komme ut av denne typen arbeid, ..}
+{\color{red}Mer motivasjon: hvorfor har jeg valgt å skrive om dette, hva godt kan komme ut av denne typen arbeid, iui andre bruksområder enn smarte hjem, ..}
 
-Jeg vil starte med å definere noen ord og uttrykk for å fjerne ambiguitet og legge et solid grunnlag for den videre diskusjonen. Jeg vil greie ut om fagområdene i detalj i kapittel to.
+{\color{red}Introduksjon til de tre typene programvare og hvilke som er aktuelle i et smart hjem..}
+\citet{levold07} 
+\citet{victor06}
+Programvare eksisterer for å hjelpe folk med å lære, å skape eller å kommunisere. \emph{Informasjonsprogramvare} hjelper folk med å lære. En person bruker informasjonsprogramvare for å konstruere og manipulere en intern representasjon av informasjonen. \emph{Manipulasjonsprogramvare} hjelper folk med å skape. En person bruker manipulasjonsprogramvare for å skap og manipulere en virtuell modell representert på datamaskin. Denne typen programvare kan bli forstått som et virtuelt verktøy, som en malingskost eller skrivemaskin, som benyttes som et grensesnitt mellom skaperen og sluttproduktet. \emph{Kommunikasjonsprogramvare} hjelper folk med å kommunisere. En person bruker kommunikasjonsprogramvare for å skape og manipulere en intern modell som er delt, forstått og synkronisert mellom flere mennesker. Kommunikasjon kan sees på som å lage et svar på tillært informasjon. Den eksterne modellen en bruker kommuniserer er den interne modellen brukeren har lært.
+
+Brukere i smarte hjem trenger programvare til å gi kommandoer til hjemmet, som å skru på lyset i et rom eller låse utgangsdøra, og til å lære om hjemmets tilstand, som å se temperatur, status på oppvaskmaskina eller om det mangler matvarer i kjøleskapet. De tre første hypotesene omhandler kommunikasjonsprogramvare; hvordan man effektivt og naturlig kan gi kommandoer til hjemmet. Den fjerde hypotesen omhandler informasjonsprogramvare; hvordan relevant informasjon om hjemmet kan presenteres for brukeren.
+
+Jeg vil nå definere noen ord og uttrykk for å fjerne ambiguitet og legge et solid grunnlag for den videre diskusjonen.
 \newline\newline
 \emph{Smarte hjem} brukes i denne oppgaven som et samlebegrep for boliger der man kan programmere og styre miljøet, enhetene og apparatene i boligen. Smarte hjem tilbyr funksjonalitet som fjernstyring, energieffektivisering, økt komfort, økt sikkerhet, automasjon og generelt enklere bruk. Jeg har valgt å bruke "smarte hjem" i stedet for "smarte hus" for å påpeke at diskusjonen omtaler faste oppholdssteder generelt og ikke bare hus. 
 \newline\newline
@@ -20,9 +27,6 @@ Jeg vil starte med å definere noen ord og uttrykk for å fjerne ambiguitet og l
 \newline\newline
 \emph{Intelligente brukergrensesnitt}. Brukergrensesnitt er programvare som gjør det mulig for en bruker å kommunisere med en datamaskin. De fleste kjenner dette som grafiske grensesnitt som tillater direkte manipulasjon gjennom mus, tastatur eller touch. Intelligente brukergrensesnitt er en nyere generasjon av grensesnitt, med evner som å kunne tilpasse seg ulike brukere dynamisk, forstå konteksten rundt interaksjon og til å tilby hel eller delvis hjelp til å oppnå brukerens mål. Noen intelligente brukergrensesnitt kan også håndtere flere inputkanaler samtidig, såkalt \emph{multimodal} input. Idéen er at multimodal input kan fremme en mer naturlig og effektiv form for interaksjon.
 
-{\color{red}Introduksjon til de tre typene programvare og hvilke som er aktuelle i et smart hjem..}
-\citet{levold07} 
-
 %%=========================================
 \subsection*{Problemformulering}
 Nå som begrepene er definert kan jeg presentere oppgavens problemformulering.
@@ -33,16 +37,16 @@ Nå som begrepene er definert kan jeg presentere oppgavens problemformulering.
 \subsection*{Bidrag \& Mål}
 {\color{red}Hvilke nyheter denne oppgaven bringer.}
 
-Hovedmålene for denne oppgaven er å {\color{red} Målbare mål!}
-\begin{enumerate}
-\item Utforske maskinlæring for å utvide egenskapene og bruksområdene til enkle sensorer.
-\item Eksperimentere med håndtering av samtidig input fra både gester og tale, i kontekst av et smart hjem.
-\item Utfordre tradisjonelle grafiske brukergrensesnitt for smarte hjem og foreslå et alternativ som er drevet av kontekst framfor interaksjon.
-\end{enumerate}
+Hovedmålene for denne oppgaven er å:
+\begin{itemize}
+\item Benytte maskinlæring for å utvide egenskapene og bruksområdene til enkle sensorer.
+\item Eksperimentere med håndtering av samtidig input fra både gester og begrenset tale.
+\item Utfordre nåværende grafiske brukergrensesnitt for smarte hjem, ved å lage programvare drevet av kontekst framfor interaksjon.
+\end{itemize}
 
 %%=========================================
 \subsection*{Disposisjon}
-Kapittel to vil greie ut om bakgrunnsteorien til de ulike fagområdene oppgaven er tilknyttet. I kapittel tre presenteres fire hypoteser rundt brukergrensesnitt i smarte hjem, hvordan disse kan utforskes med eksperimenter og hvordan disse eksperimentene ble implementert. I kapittel fire presenteres resultatene fra disse eksperimentene. Kapittel fem oppsummerer oppgaven med diskusjon, forslag til videre arbeid og konklusjoner.  
+Kapittel to vil greie ut om bakgrunnsteorien til de ulike fagområdene oppgaven er tilknyttet. I kapittel tre presenteres fire hypoteser rundt brukergrensesnitt i smarte hjem, hvordan disse kan utforskes med eksperimenter og hvordan disse eksperimentene ble implementert. I kapittel fire presenteres utførelsen og resultatene fra disse eksperimentene. Kapittel fem oppsummerer oppgaven med diskusjon, forslag til videre arbeid og konklusjoner.
 
 %%=========================================
 \subsection*{Bemerkning}
