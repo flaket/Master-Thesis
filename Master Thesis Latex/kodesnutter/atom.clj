@@ -1,0 +1,1 @@
+(def state (atom initial-state))

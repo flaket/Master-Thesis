@@ -4,8 +4,6 @@
 \subsection{Min subjektivitet}
 {\color{red}Fra mitt utsiktspunkt, hva har vært min interesse, hva kan jeg ha oversett, hvordan har jeg ikke vært objektiv, hvordan jeg kom inn i prosjektene med egne ideer (lineære klassifiseringsalgoritmer, kontekstdrevet brukergrensesnitt), hva jeg dermed ikke har sett nærmere på}
 
-
-
 \subsection{Fire hypoteser}
 Når hjemmet ditt om noen år tilbyr kontroll over ikke bare lys og temperatur, men garasjeporter, persienner, tv-er, radioer, låsene på døra og statusen til kjøkkenapparater, kan det være en utfordring å tilby gode interaksjonsmetoder. Løsningen på dette har hittil enten vært å la kontrollknappene være en del av apparatet eller å samle de i et panel på veggen, i en fjernkontroll eller i en app. Med et økende antall styrbare enheter blir det raskt upraktisk å kun ha kontroll dersom man fysisk befinner seg ved apparatet. Dermed kan det virke fornuftig å tilby kontroll gjennom en fjernkontroll eller en app. Men vil man alltid ha kontroll på hvor denne mobilen enheten befinner seg? I tillegg må en fjernkontroll eller app også designes godt for å unngå forvirring med et vanskelig brukergrensesnitt. Vi har alle vært uerfarne brukere av en ny fjernkontroll og opplevd større eller mindre problemer med å utøve kontroll over det aktuelle apparatet. Så kanskje det ikke er en dum idé å tilby et fast sted i rommet der kontrollen over aktuelle enheter er samlet? Det tradisjonelle panelet med knapper og dimmere er ikke bare stygt, men det er i tillegg vanskelig å vite hvilke knapper som hører til hvilken funksjonalitet (se figur \ref{fig:panel}). Det ideelle hadde kanskje vært å tilby et fast sted i rommet der kontroll kan utføres, men som er minimalistisk og allikevel kan styre et stort antall enheter. Hva hvis brukere kunne utføre enkle gester i luften foran en svært liten sensor, strategisk plassert på veggen?
 \begin{figure}
@@ -19,11 +17,11 @@ Når hjemmet ditt om noen år tilbyr kontroll over ikke bare lys og temperatur, 
 
 Programvare for å forstå tale blir stadig bedre. Desverre er det et stort problem å lage et brukbart system i scenarier der programvaren skal lytte etter kontinuerlig tale og må kunne skille mellom hva som er en kommando, og hva som kun er ordinær tale mellom mennesker. Det ville for eksempel vært et problem dersom alle som kom hjem på besøk måtte få en innføring i alle ord som ville utløse kommandoer og som de ikke kunne bruke mens de var i huset. Kommersielle systemer for talegjenkjenning løser gjerne dette ved å lytte etter et kodeord. Forståelse av naturlig språk har et annet stort problem. Den stadige forbedrede forståelsen kommer med en pris; prosesseringen og forståelsen av taledata må foregå i kraftige serverparker langt unna brukeren. Dette er et problem, både med tanke på personvern og det praktiske med at det er en ikke ubetydelig ventepause på at resultatet returneres til brukeren. Kanskje det ikke er nødvendig å forstå naturlig, kontinuerlig tale for å tilby kontroll over hjemmet? \newline\newline
 \textbf{Hypotese 2 - Multimodal interaksjon gjennom tale og gester}\newline
-\emph{Kombinasjonen av enkle gester og begrenset tale er en tilstrekkelig, naturlig og effektiv måte å kontrollere hjemmet på. Det er er uproblematisk å implementere et slikt system med åpen kildekode.}\newline
+\emph{Kombinasjonen av enkle gester og begrenset tale er en tilstrekkelig, naturlig og effektiv måte å kontrollere hjemmet på.}\newline
 
 En gest utført foran flere sensorer i en viss konfigurasjon vil skape mer data. Det virker derfor rimelig å anta at mer data kan lede til en enda mer nøyaktig forståelse av ulike kommandoer. Sensorene har også muligheten til å måle andre verdier, som lys-nivåer, nærhet og tilstedeværelse. Kan disse egenskapene utnyttes i et smart hjem?\newline\newline
 \textbf{Hypotese 3 - Kombinasjoner}\newline
-\emph{Ved å benytte flere sensorer i kombinasjon kan man oppnå en høyere presisjon enn ved bruk av en enkelt sensor. Med flere sensorer kan flere kommandoer utføres naturlig av brukeren og forstås effektivt av programvaren. Sensorenes evne til å måle lys, nærhet og tilstedeværelse kan også utnyttes for å gi verdi i et smart hjem.}\newline
+\emph{Ved å benytte flere sensorer i kombinasjon kan man oppnå en høyere presisjon enn ved bruk av en enkelt sensor, flere kommandoer kan utføres naturlig og sensorenes evne til å måle lys, nærhet og tilstedeværelse kan også utnyttes verdifullt i et smart hjem.}\newline
 
 Standard programvare for styring av smarte hjem består av  grafiske brukergrensesnitt der metaforiske objekter, som knapper og brytere skal manipuleres. Er dette egentlig nødvendig? Brukerne bryr seg ikke om disse kunstige objektene. De bryr seg om informasjonen om hjemmet og å forstå valgene de kan ta. Den eneste modellen som skal manipuleres befinner seg i hodene deres. Et grafisk brukergrensesnitt for smarte hjem er informasjonsprogramvare og bør designes som en informasjonsgrafikk og ikke som manipulasjonsprogramvare.\newline\newline
 \textbf{Hypotese 4 - Kontekstdrevet brukergrensesnitt}\newline
@@ -55,7 +53,7 @@ Denne hypotesen testes ved å implementere et grafisk brukergrensesnitt og argum
 De følgende underkapitlene diskuterer først hvordan hvert eksperiment kan implementeres og greier så ut om hvordan jeg valgte å implementere dem.
 
 \subsubsection{Gestegjenkjennelse gjennom fotodioder}
-{\color{red}Kildekoden til dette eksperimentet representerer implementasjonen og finnes i appendix. Ref til kildekode.}
+{\color{red}Kildekoden til dette eksperimentet finnes i REFERANSELENKE}
 For å gjennomføre eksperimentet trengs det tilgang til en sensor som produserer tilstrekkelig detaljert data når et objekt føres i nærheten. Dataene må overføres fra sensoren til en kraftigere datamaskin. Her må dataene behandles og forberedes til maskinlæring. Til slutt trengs det gode biblioteker for læringen, gjerne med en rekke tilgjengelige algoritmer så flere tilnærminger kan forsøkes. Maskinlæringsalgoritmer er sjeldent svært avanserte og vanskelige å implementere, men for å oppnå gode resultater hurtig trengs optimaliserte implementasjoner. Det virker derfor rimelig å lete etter passende biblioteker, framfor å implementere egne algoritmer.
 
 For å implementere eksperimentet har jeg brukt sensoren \emph{APDS-9960} fra Avago Technologies{\color{red}ref}. Denne sensoren har flere funksjoner og tilbyr måling av lys og farge, oppdagelse av nærhet og gestegjenkjennelse. Innpakningen er svært liten på kun 3.94 * 2.36 * 1.35 mm, og kan ses i figur \ref{fig:sensor-size}. Gestesensoren selv består av fire fotodioder, som kan oppfatte et infrarødt signal. En LED sender ut det infrarøde signalet og dersom et objekt befinner seg innenfor omtrent 20cm vil signalet reflekteres tilbake med nok styrke til å bli oppfattet av sensoren {\color{red}tegning?}. Fotodiodene er vinklet litt forskjellig slik at de plukker opp refleksjoner på ulike steder. Sensoren benytter resultater fra nærhetsdetektoren for å automatisk aktiveres når et objekt er innen rekkevidde. I tilegg brukes måling av lys for å tilpasse de infrarøde målingene til lysnivået i omgivelsene. Dataene dannes som 32-bit datasett og kommuniseres over I2C-protokollen til en mikrokontroller. Sensoren kan i følge fabrikanten selv håndtere forståelse av gester som passerer opp, ned, mot venstre eller mot høyre over sensoren. For å utvikle systemet er Sparkfun's innpakning av APDS-9960-sensoren benyttet. Figur \ref{fig:sensor-size} viser APDS-9960-sensoren på Sparkfun-brettet. Dette brettet gjør sensoren tilgjengelig for enklere prototyping ved å bryte ut ulike pinner. I tillegg har Sparkfun skrevet programvare til Arduino-plattformen så utviklere kommer raskt i gang og kan gjøre bruk av de forskjellige funksjonalitetene hos APDS-9960-brikken.
@@ -124,108 +122,130 @@ Jeg valgte å benytte denne sistnevnte teknikken og lagde vektorer med 128 datap
 \caption{Illustrasjon av dannelsen av en datavektorer.}
 \label{fig:data}
 \end{figure}
+
+\begin{listing}[ht]
+\inputminted[fontsize=\footnotesize, linenos]{python}{kodesnutter/preprocess_data.py}
+\label{code:dataprocessing}
+\caption{Dataprosessering}
+\end{listing}
+
 Eksperimentet vil ha to deler. Den første delen blir å utføre en rekke eksempler på gester og lagre de prosesserte dataene. Del to er laste inn dataene i en modell kan trenes, testes og evalueres.  
 
 For å utføre maskinlæringen benyttet jeg to Python-biblioteker: numpy og scikit-learn. Numpy er det absolutt vanligste biblioteket for numeriske kalkulasjoner i Python. For maskinlæringen finnes det mange alternativer. Scikit-learn tilbyr mange algoritmer, og er spesielt gode på de lineære klassifiseringsalgoritmene. For å benytte klassifiseringsalgoritmene scikit-learn har tilgjengelig trengs det to numpy-datasett: et datasett med dataene fra gestene, og et tilsvarende med tilhørende etiketter.
 
+\begin{listing}[ht]
+\inputminted[fontsize=\footnotesize]{python}{kodesnutter/split_data.py}
+\label{code:split}
+\caption{Splitte datasettene}
+\end{listing}
+
 \subsubsection{Multimodal interaksjon gjennom tale og gester}
-{\color{red}Hvordan kan eksperimentet implementeres? Hvordan valgte jeg å implementere det? Kode.}
+{\color{red}Kildekoden til dette eksperimentet finnes i REFERANSELENKE}
+Dersom eksperiment 1 er utført er gestegjenkjennelse tilgjengelig. Videre må det velges eller implementeres et system for talegjenkjenning. Det trengs i tillegg til utstyret fra eksperiment 1 en mikrofon for å lytte etter tale. Det trengs også teknikker for å håndtere data fra gester og tale samtidig. Å håndtere simultan data fra både gester og tale er et problem. Hvordan sikrer man at data ikke går tapt dersom input kommer samtidig fra begge kilder? Hvilken data skal ha prioritet dersom de kommer samtidig? Til sist bør eksperimentet visualiseres på et vis for å vise at systemet fungerer slik som ønsket.
 
-{\color{red}Hvordan kan eksperimentet implementeres?}
-Dersom eksperiment 1 er utført er gestegjenkjennelse tilgjengelig. Et system for talegjenkjenning må finnes eller implementeres fra bunn av. Det trengs i tillegg til utstyret fra eksperiment 1 en mikrofon.
-
-{\color{red}Gester}
 Dersom eksperiment 1 var en suksess kunne maskinlærte gester blitt brukt i kombinasjon med tale i dette eksperimentet. Men for å i utgangspunktet minimere kompleksiteten valgte jeg i dette eksperimentet å benytte Sparkfuns programvare for gestegjenkjennelse. Dette betydde at gestesensoren forstår seks ulike gester. Kombinasjonen av maskinlærte gester og tale utforskes i eksperiment 3.
 
-{\color{red}Talegjenkjenningsprogramvare}
-Det finnes alternativer dersom man ønsker å utforske programvare for talegjenkjenning. Google tilbyr sitt tale-API, men da mitt poeng er at disse tjenestene ikke er det vi ønsker i hjemmet må vi ty til andre midler. CMUSphinx er et pågående prosjekt fra Carnegie Mellom University med fri kildekode.
+Det finnes alternativer dersom man ønsker å utforske programvare for talegjenkjenning. Blant annet tilbyr \emph{Google} sitt tale-API. Men da mitt poeng er at disse tjenestene muligens ikke er det vi ønsker i hjemmet må vi ty til andre midler. Dette eksperimentet handler delvis om å argumentere hvorfor dette er tilfellet og blir greid ut om i kapitell 4. \emph{CMUSphinx} er et pågående åpent prosjekt fra \emph{Carnegie Mellon University}. De har to aktuelle prosjekter for talegjenkjenning: \emph{Sphinx4} og \emph{Pocketsphinx}.
 
-norsk vs engelsk
+Jeg valgte å benytte Pocketsphinx for talegjenkjenningen. Sphinx4 er skrevet i \emph{Java} og ble utforsket i forbindelse med å utføre både gesteforståelse og talegjenkjenning på Java-plattformen. Pocketsphinx er skrevet i \emph{C} og er dermed lettere tilgjengelig for bruk gjennom Python. Etter at jeg hadde avgjort å jobbe med Python ble Pocketsphinx det naturlige valget. For å benytte Pocketsphinx trengs det tre datakilder: en \emph{hidden markov model (HMM)}, en \emph{språkmodell} og en \emph{ordbok}. \emph{HMM} forteller om sannsynligheten for at visse ord følger hverandre. CMUSphinx-prosjektet utvikler stadig nye modeller og den engelske er godt moden. Desverre har de ikke jobbet med en norsk modell. Det finnes modeller for norsk der ute, men da jeg ikke fant noen åpne og fritt tilgjengelige ble jeg tvunget til å utføre eksperimentet på engelsk. Dette er ikke et stort problem, da eksperimentet handler om argumentasjon for lokal og begrenset talegjenkjenning og den praktiske utførelsen av multimodalitet. Språket det tales i er ikke en viktig del av eksperimentet. \emph{Språkmodellen} og \emph{ordboken} er basert på en liste over ord eller setninger som talegjenkjenningen skal forsøke å forstå lyder som. CMUSphinx tilbyr et verktøy for å lage en språkmodell og ordbok, basert på en liste over aktuelle setninger. Modellen som dannes kan forstå kombinasjoner av ordene og setningene, men kombinasjonen man faktisk skriver inn i lista blir vektet tyngre.  Etter at pocketsphinx er installert kan det startes (med medfølgende HMM) fra kommandolinjen med:\newline
 
-sphinx vs pocketsphinx
-
-lage språkmodell
-
-Etter at pocketsphinx er installert kan det startes fra kommandolinjen med:
-\verb|pocketsphinx_continuous -inmic yes -lm ..sti/til/språkmodell -dict ..sti/til/ordbok|
-
-{\color{red}Håndtering av multimodal input: køer og tråder. Hvor mye kode skal jeg ha med?}
-Prat om hvor bra køer og tråder er..
-
-\begin{lstlisting}[language=Python, caption=Kode Python bakgrunnstråd]
-from threading import Thread
-
-def start_thread(fn, args):
-    worker = Thread(target=fn, args=args)
-    worker.setDaemon(True)
-    worker.start()
-\end{lstlisting}
-
-\begin{lstlisting}[language=Python, caption=Geste-data]
-from serial import Serial
-
-def gesture_recognition(q):
-    ser = Serial('/dev/cu.usbmodem1431', 9600)
-    buf = []
-    while True:
-        c = ser.read()
-        if c == '\n':
-            result = ''.join(buf)
-            print(result)
-            q.put(('gesture', result), block=True, timeout=1)
-            buf = []
-        elif c == '\r':
-            pass
-        else:
-            buf.append(c)
-\end{lstlisting}
-
-\begin{lstlisting}[language=Python, caption=Talegjenkjenning]
-
-\end{lstlisting}
-
-\begin{lstlisting}[language=Python, caption=Kode Python starte trådene]
-start_thread(speech_recognition, (animation_q,))
-start_thread(gesture_recognition, (animation_q,))
-\end{lstlisting}
-
-\begin{lstlisting}[language=Python, caption=Kode Python multimodal]
-import pyprocessing as p
-
-def simple_multi_modal():
-    source, text = animation_q.get_nowait()
-    # non-blocking check for items in animation_q.
-    # If queue is empty a Queue.Empty exception is raised.
-    # data read from queue is a tuple of strings: (source, text)
-    if source == 'gesture':
-        p.fill(0, 102, randint(50,150))
-        p.textSize(48)
-    elif source == 'speech':
-        p.fill(102, randint(50,150), 0)
-        p.textSize(32)
-    else:
-        pass
-    p.text(text, randint(50,550), randint(50,550))
-\end{lstlisting}
+%pocketsphinx_continuous -inmic yes -lm ..path/to/language-model -dict ..path/to/dictionary
 
 
+{\color{red}Animasjon, Håndtering av multimodal input: køer og tråder, asynkron håndtering av multimodalitet, alternativer fra teoribakgrunn?}
+For å håndtere simultan input fra begge datakilder har jeg valgt å benytte tråder og en felles kø. Hovedtråden i programmet spinner opp to nye tråder som hver har ansvar for å drive input-funksjonene til gestedata og taledata. 
+
+\begin{listing}[ht]
+\inputminted[fontsize=\footnotesize, linenos]{python}{kodesnutter/background_threads.py}
+\label{code:backgroundthreads}
+\caption{Bakgrunnstråder}
+\end{listing}
+
+Disse funksjonene henter data fra seriellporten for gestedata og mikrofonen for taledata. Dataene puttes på en felles kø for programmet. Dataene puttes på køen i en \emph{tuple}: et kodeord, sammen med dataene. På denne måten blir dataene merket slik at forbrukeren av køen kan skille mellom kildene dataene kommer fra.
+
+\begin{listing}[ht]
+\inputminted[fontsize=\footnotesize, linenos]{python}{kodesnutter/gesture_data.py}
+\label{code:gesturedata}
+\caption{Overføre data fra gester}
+\end{listing}
+
+Hovedtråden går i en kontinuerlig loop og ser om det har kommet ny data inn i køen. På denne måten er de to inputkildene likestilte. Alt de gjør når inputenhetene genererer data er å putte denne dataen på køen, uten å blokkere. I den andre enden lytter hovedtråden på køen. Hovedtråden driver en animasjon. Animasjonen utføres av \emph{pyprocessing}, et bibliotek som følger animasjonsspråket \emph{Processing}'s konvensjoner. Animasjonen henter ny data fra køen. Det første elementet i data-tuplen er et kodeord. Dersom kodeordet sier at dataene er gestedata tegnes det på et vis, og dersom dataene er taledata på et annet. Dersom det ikke er ny data i køen tegnes ingenting nytt.
+
+\begin{listing}[ht]
+\inputminted[fontsize=\footnotesize, linenos]{python}{kodesnutter/multimodal.py}
+\label{code:multimodal}
+\caption{Håndtere multimodal inputdata}
+\end{listing}
+
+Denne implementasjonen viser hvordan to inputkilder kan operere asynkront og hver for seg dytte sine data inn på en felles kø. Hovedtråden i programmet henter data fra køen og avhengig av kilden tegnes dataene forskjellig på skjermen. Implementasjonen viser hvordan multimodal input kan håndteres.
 
 \subsubsection{Kombinasjoner}
-{\color{red}Hvordan kan eksperimentet implementeres? Hvordan ble det implementert? Kode.}
+{\color{red}Kildekoden til dette eksperimentet finnes i REFERANSELENKE}
+Utgangspunkt i eksperiment 1 og 2. Trenger flere sensorer, og eventuelt level-shiftere og Arduinoer. Posisjonen til et nytt antall sensorer er interessant. Skal de plasseres så nære hverandre som mulig, for å fungere som en enkelt bryter med større presisjon? Eller skal de posisjoneres et godt stykke fra hverandre, så de kan benyttes med begge hender og som en enkelt eller delvis flere brytere?
 
-Bruksområder i smarte hjem for den andre funksjonaliteten i sensorene.
-PING: Data om farger, lysintensitet, avstand og en kombinasjon av flere gestesensorer utforskes for å finne nye interaksjonsideér.
-Gester
-Lysstyrke / Farger kontinuerlig
-Lys interrupt
-Nærhetsmåling kontinuerlig
-Nærhetsinterrupt
-Hva kan man få til dersom man har fire sensorer plassert i et kvadrat?
+Jeg valgte å benytte fire sensorer, der selve sensorene danner hjørner i et kvadrat på 6 * 6 cm.
+
+For å håndtere data fra fire sensorer samtidig valgte jeg å benytte samme strategi som i eksperiment 2. Fra hovedtråden i programmet starter jeg opp fire tråder som hver lytter på sin port, og dytter data fra gestesensorene inn på en felles kø. Hovedtråden henter data fra køen helt til køen er tom. De individuelle trådene putter også her dataene på køen sammen med en identifikator, så hovedtråden forstår hvor dataene har sitt opphav. Ettersom dataene fra de ulike sensorene kan komme i en uforutsigbar rekkefølge er man nødt til å sortere de. Hovedtråden bygger opp lister av data fra hver sensor. Når køen er tom prosesseres rådataene og forberedes på maskinlæringen. Jeg valgte også her å benytte vektorer med størrelse på 128 datapunkter, for hver sensor. Dette betyr at dersom en gest kun blir oppfattet av en av de fire sensorene vil den resulterende vektoren på 512 datapunkter ha minimum 364 datapunkter som er null. På denne måten vil systemet svært enkelt lære gester som kun aktiverer et subsett av de fire sensorene. Maskinlæringen er lik som i eksperiment 1. Scikit-learn håndterer inputdata med vilkårlig store datavektorer.
+
+{\color{red}Håndtering av dimming og lysnivåer}
+
+\begin{listing}[ht]
+\inputminted[fontsize=\footnotesize, linenos]{python}{kodesnutter/dimming.py}
+\label{code:dim}
+\caption{Dimme lys}
+\end{listing}
+
+\begin{listing}[ht]
+\inputminted[fontsize=\footnotesize, linenos]{python}{kodesnutter/lighting.py}
+\label{code:light}
+\caption{Lysnivåer}
+\end{listing}
 
 \subsubsection{Kontekstdrevet brukergrensesnitt}
-{\color{red}Hvordan kan eksperimentet implementeres? Hvordan ble det implementert? Kode.}
+{\color{red}Kildekoden til dette eksperimentet finnes i REFERANSELENKE}
+Denne fjerde hypotesen omhandler informasjonsprogramvare; hvordan relevant informasjon om hjemmet kan presenteres for brukeren. For å implementere eksperimentet må det velges teknologi for å lage et brukergrensesnitt. Webteknologi, grafikk, desktop, app? Trenger noe dynamisk med evnen til å forandre seg basert på data og ikke nødvendigvis interaksjon med brukeren.
 
-Denne fjerde hypotesen omhandler informasjonsprogramvare; hvordan relevant informasjon om hjemmet kan presenteres for brukeren.
+Jeg valgte å benytte webteknologi for å implemnetere dette eksperimentet. Dette valget ble tatt av to grunner: \emph{Javascript}'s dynamiske natur, samt nokså nye teknologien fra \emph{Facebook} kalt \emph{React}. React tilbyr et viruelt \emph{DOM} som man programmerer mot. Når data oppdaterer seg beregner React forskjellen mellom dette virtuelle DOM'et og det virkelige DOM'et. Utregningen av denne forskjellen gjør at minimale deler av det virkelige DOM'et må oppdateres, og det hele er svært effektivt. I stedet for å benytte Javascript og React direkte gjorde jeg bruk av \emph{Clojurescript} og \emph{Reagent}. Clojurescript kompilerer til Javascript og Reagent er et Clojurescript-bibliotek for å bruke React. Ved å benytte Clojurescript kan jeg modellere hele hjemmets tilstand i en, enkel datastruktur. Først når denne datastrukturen blir oppdatert vil React automatisk beregne hvilke deler av det grafiske grensesnittet som må oppdateres.
 
-Som regel når en person bruker programvare er det ikke for å skape noe, men for å lese, observere, utforske og lære. Folk er ute etter å ordne egne tanker. Datamaskinen er et medium for å spørre spørsmål, gjøre sammenligninger og dra konklusjoner. Det aller meste av programvare er altså \emph{informasjonsprogramvare}. 
+{\color{red}Datastruktur}
+datastruktur i listing \ref{code:datastructure}
+
+\begin{listing}[ht]
+\inputminted[fontsize=\footnotesize, linenos]{clj}{kodesnutter/data.clj}
+\caption{Datastruktur}
+\label{code:datastructure}
+\end{listing}
+
+\begin{listing}[ht]
+\inputminted[fontsize=\footnotesize, linenos]{clj}{kodesnutter/atom.clj}
+\caption{Atom}
+\label{code:atom}
+\end{listing}
+
+{\color{red}Teknologi: dynamisk generert html}
+
+\begin{listing}[ht]
+\inputminted[fontsize=\footnotesize, linenos]{clj}{kodesnutter/home.clj}
+\caption{Hovedkonteiner HTML}
+\label{code:home}
+\end{listing}
+
+\begin{listing}[ht]
+\inputminted[fontsize=\footnotesize, linenos]{clj}{kodesnutter/kitchen.clj}
+\caption{Kjøkken HTML}
+\label{code:kitchen}
+\end{listing}
+
+\begin{listing}[ht]
+\inputminted[fontsize=\footnotesize, linenos]{clj}{kodesnutter/rule.clj}
+\caption{Regel}
+\label{code:regel}
+\end{listing}
+
+
+
+
+
+
+
 
