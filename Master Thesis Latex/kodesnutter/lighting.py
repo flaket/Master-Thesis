@@ -1,7 +1,7 @@
 def lighting():
-    source, data = animation_q.get_nowait()
-    d = data.split(' ')
-    (a, r, g, b) = list(map(int, d)) # max values: 37889
+    source, color_levels = animation_q.get_nowait()
+    color_levels = color_levels.split(' ')
+    (a, r, g, b) = list(map(int, color_levels)) # max values: 37889
     if source == 'lighting':
         p.fill(a,a,a)
         p.rect(200,100,200,100)

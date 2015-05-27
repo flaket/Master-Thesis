@@ -4,6 +4,33 @@
 \subsection{Diskusjon}
 {\color{red}Sammenlign hypoteser og resultater. Diskuter om problemformuleringen er utfordret på en god måte.}
 
+\subsubsection*{Gestegjenkjennelse gjennom fotodioder}
+
+\begin{itemize}
+\item Jeg argumenterer for at en gestesensor i form av enkle fotodioder er et tilstrekkelig medium for enkel brukerinteraksjon (\ref{ch:2.minide}).
+\item Jeg viser at maskinlæring kan benyttes for å lære et system å forstå enkle gester og viser at dette er et alternativ til å eksplisitt programmere forståelse (\ref{ch:2.resultater}).
+\item Jeg viser at det holder med et titalls treningseksempler fra hver gest for å oppnå gode resultater med lineære modeller og at det med 50 eksempler oppnås en suksessrate på 96\% (\ref{ch:2.resultater}).
+\end{itemize}
+
+Både logistisk regresjon og støttevektormaskin ga svært lovende resultater, som vist i tabell \ref{table:results}. 96\% er en meget høy suksessrate og viser hvor godt enkle, lineære modeller kan skille på denne typen data. Det ble så interessant å spørre seg om dette resultatet kunne blitt enda høyere. Jeg ønsket ikke å bruke mer tid på å lage flere treningseksempler, så i stedet utførte jeg treningen på nytt med færre treningseksempler, i håp om å kunne se en utviklingstrend. Det samme eksperimentet ble utført med en femtedel og halvparten av dataene for å danne et bilde av sammenhengen mellom forbedring i suksessrate og antall treningseksempler. Figur \ref{figure:resultsgraf} viser resultatene for 100, 250 og 500 treningseksempler. Ettersom biblioteket jeg benyttet for å implementere algoritmene tilbyr en rekke andre algoritmer forsøkte jeg noen andre tilnærminger enn lineære modeller og inkluderte dem også.
+
+I figur \ref{figure:resultsgraf} kan vi se at SVM-ene er i nærheten av 95\% allerede etter 250 treningseksempler og at de kun øker minimalt med 250 ekstra tilfeller. Dette tyder på at det trengs et stort antall ekstra treningseksempler for at algoritmene skal krype betydelig nærmere 100\%. De mer kompliserte algoritmene ExtraTrees og GradientBoost benytter seg av flere algoritmer under panelet og kombinerer disse. Det kan se ut som om spesielt GradientBoost kan fortsette å øke suksessraten betydelig med mer trening, men det er tvilsomt om den noen gang passerer SVM. Til sist nevnes k-nærmeste nabo (kNN), som begynner svakest av de utprøvde algoritmene, men fremdeles har en sterk vekst mellom 250 og 500 tilfeller. Det hadde vært interessant å se utviklingen videre for denne enkle algoritmen.
+
+Dette prosjektet har argumentert for at gester kan være en aktuell interaksjonsform i hjemmet, spesielt som en erstatning til store knappepaneler og desentralisert styringskontroll. Det har også vist at maskinlæring kan benyttes for å gi enkle sensorer en svært god forståelse av gester. Med en suksessrate på over 95\% i klassifiseringen av 10 ulike gester er denne teknikken svært interessant. Og med en suksessrate på over 85\% allerede etter kun 10 treningseksempler på hver gest, kan man forestille seg at brukere selv kan sette av 10 minutter til å trene et helt nytt og utrent system til å forstå sine egne gester. I et produkt kunne det vært aktuelt å tilby online-læring gjennom systemets levetid. Man kan med andre ord la systemet lære etter hvert som brukeren benytter systemet. Dette vil nødvendigvis kreve at brukeren har en mulighet til å gi tilbakemelding på når systemet gjettet riktig gest og når det gjettet feil.
+
+
+\subsubsection*{Multimodal interaksjon gjennom tale og gester}
+\begin{itemize}
+\item Argumenterer for at kombinasjonen av enkle gester og talekommandoer er en effektiv måte å interagere med det smarte hjemmet på {\color{red} fwd ref}.
+\item Viser at talegjenkjenning over en begrenset mengde ord dekker funksjonaliteten vi ønsker å tilby gjennom tale og at det finnes åpne og tilgjengelige løsninger for å løse dette problemet.{\color{red} fwd ref}.
+\item En implementasjon som håndterer multimodal input fra gestesensor og mikrofon. Denne benyttes for å simulerer bruken i et smart hjem ved å vise en dynamisk grafisk representasjon av inputdataene. Forskjellige anvendelser blir utforsket. {\color{red} fwd ref}.
+\end{itemize}
+
+\subsubsection*{Kombinasjoner}
+
+\subsubsection*{Kontekstdrevet brukergrensesnitt}
+
+
 \subsection{Videre arbeid}
 {\color{red}Hva har jeg ikke jobbet med? Hvilke nye ideer har dukket opp?}
 
@@ -11,16 +38,16 @@
 andre klassifiseringsalgoritmer, annet antall datapunkter
 
 \subsubsection*{Multimodal interaksjon gjennom tale og gester}
-enkle kommandoer for å styre hjemmet, naturlig tale for å spørre orakel-spørsmål. Ulike aktiveringsgester aktiverer den passende talegjenkjenningen
+Rejecting out of grammar utterances, enkle kommandoer for å styre hjemmet, naturlig tale for å spørre orakel-spørsmål. Ulike aktiveringsgester aktiverer den passende talegjenkjenningen
 
 \subsubsection*{Kombinasjoner}
 Sykehus.
+2-way authentication.
 Sensorer i forbindelse med tablets.
 Kunstnerisk uttrykk når  kombinert med processing. Casual tegning med gester. Forskjellige output til lerretet ved interaksjon med de forskjellige sensorene. Tale for å velge farge, pensel, etc?
 
 \subsubsection*{Kontekstdrevet brukergrensesnitt}
-Maskinlæring.
-Brukere kan legge inn egne regler.
+Maskinlæring, brukere kan legge inn egne regler, benytte reell sensordata fra et hjem.
 
 
 \subsection{Konklusjon}

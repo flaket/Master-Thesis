@@ -428,7 +428,7 @@ Denne framgangsmåten ble kalt "noisy channel model" av Claude Shannon (1948) {\
 
 De fleste talegjenkjenningssystemene i dag benytter en språkmodell etter Markov-antakelsen, altså at den nåværende tilstanden, Word1, avhenger kun av et fiksert antall foregående tilstander, og Word1 er representert som en enkelt tilfeldig variabel bestpende av et begrenset sett med verdier, hvilket gjør den til en Hidden Markov Model (HMM). Altså kan talegjenkjenning løses ved å anvende HMM-metodologien.
 
-Fra CMUSphinx
+Fra CMU Sphinx
 Tale virker enkelt å forstå: det er bygget opp av ord og hvert ord består av fonemer. I virkeligheten er det desverre svært annerledes. Tale er en dynamisk prosess uten klare skiller mellom ulike deler. De moderne måtene å beskrive tale på er i større eller mindre grad basert på sannsynligheter. Denne måten å se situasjonen på lar oss forstå at talegjenkjenning aldri vil være 100\% korrekt.
 
 Tale er en kontinuerlig strøm av audio der relativt stabile tilstander blander seg med dynamiske tilstander. I denne strømmen av tilstander kan man forsøke å definere klasser av lyder, kalt fonemer. De akustiske egenskapene til bølgeformen til et fonem kan variere kraftig avhengig av faktorer som omgivelseslyder, hvem som taler og hvordan denne kilden taler. Disse variasjonene kan gjøre at fonemer oppfattes svært annerledes ut enn det de skulle representere. 
@@ -442,7 +442,7 @@ Tale modelleres gjerne med en Hidden Markov Model (HMM). Modellen beskriver en s
 
 Tre modeller benyttes i talegjenkjenning for å matche ord med lyd. En akustisk modell, en ordbok og en språkmodell. Den akustiske modellen holder akustiske egenskaper for kombinasjoner av fonemer. En enkel fonetisk ordbok knytter ord med fonemer. Denne naive varianten er ikke veldig effektiv ettersom den ikke tar større hensyn til forskjellige uttaler, men den fungerer som regel i praksis. Maskinlæring kan benyttes her for å lære langt mer nyanserte sammenhenger. En språkmodell brukes for å innsnevre søket etter det passende ordet. Den definerer hvilke ord som kan følge etter det foregående gjenkjente ordet og hjelper dermed med å fjerne ord som ikke er sannsynlige. De fleste språkmodeller er n-gram modeller, som inneholder statistikk over ord-sekvenser, eller finite-state-modeller, som definerer talesekvenser av finite-state-automation med vekting. For å oppnå en god presisjon må språkmodellen utføre en god jobb på å begrense søkeområdet for mulige ord. Den må altså være svært god på å gjette det neste ordet. En språkmodell begrenser som regel vokabularet til ordene den inneholder. Dette skaper problemer med navn-gjenkjenning. Derfor kan en språkmodell også inneholde mindre deler, som subord eller til og med fonemer. Søkeområdet øker dersom disse introduseres og leder som regel til svakere presisjon enn med en ord-basert språkmodell.  
 
-Prosjekter som benytter tale (google, apple, samsung, ..).
+Prosjekter som benytter tale (kommersielle produkter, forskning, ..).
 }
 
 \subsubsection*{Gester}

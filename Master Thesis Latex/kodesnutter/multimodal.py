@@ -1,10 +1,10 @@
 import pyprocessing as p
 
 def simple_multi_modal():
-    source, data = animation_q.get_nowait()
+    source, recognized_input = animation_q.get_nowait()
     # non-blocking check for items in animation_q.
     # If queue is empty a Queue.Empty exception is raised.
-    # data read from queue is a tuple of strings: (source, data)
+    # data read from queue is a tuple of strings: (source, recognized_input)
     if source == 'gesture':
         p.fill(0, 102, randint(50,150))
         p.textSize(48)
@@ -13,4 +13,4 @@ def simple_multi_modal():
         p.textSize(32)
     else:
         pass
-    p.text(data, randint(50,550), randint(50,550))
+    p.text(recognized_input, randint(50,550), randint(50,550))
