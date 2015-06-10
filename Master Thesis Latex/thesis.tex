@@ -15,7 +15,7 @@
 \renewcommand\tablename{Tabell}
 \renewcommand\listfigurename{Figurer}
 \renewcommand\listtablename{Tabeller}
-\renewcommand\listoflistingscaption{Kodesnutter}
+\renewcommand\listoflistingscaption{Kodeeksempler}
 
 %%==================================
 \begin{document}
@@ -36,18 +36,18 @@
 \setcounter{page}{0}
 \pagenumbering{arabic}
 %%=====================================
-\include{kap01}
-\include{kap02}
-\include{kap03}
+%\include{kap01}
+%\include{kap02}
+%\include{kap03}
 \include{kap04}
-\include{kap05}
-%%=========================================
-\appendix
-\include{appendix}
-\include{akronymer}
+%\include{kap05}
 %%=========================================
 \bibliographystyle{apa}
 \addcontentsline{toc}{section}{\bibname}
 \bibliography{refs}
+%%=========================================
+\appendix
+\include{appendix}
+\include{akronymer}
 %%=========================================
 \end{document}

@@ -1,13 +1,14 @@
 %%=========================================
 \section[Eksperimenter \& Resultater]{Eksperimenter \& Resultater}
-%%=========================================
+%%=========================================\\
 \subsection{Evalueringsstrategier}
-For at en hypotese skal bevises kreves det logisk argumentasjon, empiriske bevis og reproduserbarhet. Alle hypotesene utforskes med argumentasjon, men de empiriske bevisene vil mangle fra noen av dem. Dette er rett og slett fordi det vil kreve mer tid og utføresle av brukertesting for å bevise disse hypotesene. Gestegjenkjennelsen vil evalueres av den prosentvise korrekte klassifiseringen. Den vil også evalueres etter hvor mange gester det lærte systemet kan skille mellom, mot hvor mange som kan eksplisitt programmeres. Dette gjelder hypotesene 1 og 3. Hypotesene 2 og 4 lenser seg mer på argumentasjon.
+For at en hypotese skal bevises gjennom den vitenskapelige metode kreves det logisk argumentasjon, empiriske bevis og at eksperimentet er reproduserbart. Alle hypotesene jeg har dannet utforskes i dette kapitellet med argumentasjon, men de empiriske bevisene vil mangle i noen tilfeller. Dette er rett og slett fordi det vil kreve mer tid og utførelse av brukertesting for å bevise disse hypotesene. Gestegjenkjennelsen vil evalueres av den prosentvise korrekte klassifiseringen. Den vil også evalueres etter hvor mange gester det lærte systemet kan skille mellom, mot hvor mange som kan eksplisitt programmeres. Dette gjelder hypotesene 1 og 3. Hypotesene 2 og 4 lener seg hovedsaklig på argumentasjon.\\
 
 \subsection{Eksperimentsutførelse}
-
 \subsubsection*{Gestegjenkjennelse gjennom fotodioder}
-Dersom man ønsker å tilby styringsmuligheter på en eller flere vegger i et hus kan enkle gestesensorer benyttes i steden for et panel av knapper og dimmere. I det forrige kapitellet så vi at den aktuelle sensoren er på størrelse med et knappenålshode. Gode produktdesignere vil med dette utgangspunktet kunne kan lage et produkt som enten forsvinner inn i hjemmiljøet, eller et som synes tydelig, men er praktisk og estetisk. Sensoren merker at en hånd eller et annet objekt befinner seg foran den ved å sende ut et svakt infrarødt signal som reflekteres.
+Dersom man ønsker å tilby styringsmuligheter på en eller flere vegger i et hus kan enkle gestesensorer benyttes i steden for et panel av knapper og dimmere. I det forrige kapitellet så vi at den aktuelle sensoren er på størrelse med et knappenålshode. Gode produktdesignere vil med dette utgangspunktet kunne kan lage et produkt som enten forsvinner inn i hjemmiljøet, eller et som synes tydelig, men er praktisk og estetisk. Sensoren merker at en hånd eller et annet objekt befinner seg foran den ved å sende ut et svakt infrarødt signal som reflekteres. Signalet detekteres dersom signalet er tilstrekkelig sterkt nok når det returnerer. Dette vil bare skje dersom objektet er opptil 20 cm unna sensoren. Gester forstås dermed kun når de utføres rett foran sensoren.
+
+I motsetning til forståelse av gester gjennom bruk av kameraer er dette altså en langt mindre påtrengende måte å interagere med brukerne. De kan være sikre på å verken være overvåket eller at personvernet deres på noen måte krenkes. Gestesensoren fungerer som en multifunksjonell knapp.\\
 \begin{wrapfigure}{r}{0.4\textwidth}
     \vspace{-20pt}
   \begin{center}
@@ -18,10 +19,6 @@ Dersom man ønsker å tilby styringsmuligheter på en eller flere vegger i et hu
   \label{fig:gest}
   \vspace{-7pt}
 \end{wrapfigure}
-Signalet detekteres dersom signalet er tilstrekkelig sterkt nok når det returnerer. Dette vil bare skje dersom objektet er opptil 20 cm unna sensoren. Gester forstås dermed kun når de utføres rett foran sensoren.
-
-I motsetning til forståelse av gester gjennom bruk av kameraer er dette altså en langt mindre påtrengende måte å interagere med brukerne. De kan være sikre på å verken være overvåket eller at personvernet deres på noen måte krenkes. Gestesensoren fungerer som en multifunksjonell knapp.
-
 Figur \ref{fig:gest} viser en typisk gest der brukeren sveiper hånda foran sensoren som befinner seg på veggen. Kanskje denne sveipende bevegelsen foran denne sensoren betyr å skru av lyset i rommet sensoren befinner seg i. Eller kanskje gesten betyr å skru på radioen, låse opp en dør, lukke gardinene eller starte kaffemaskinen. Det er ingen begrensning på hva en enkelt gest aktiverer i form av funksjonalitet.
 
 Når en gest utføres må enten rådataene fra sensoren eller en forståelse av dataene sendes til et system som har ansvaret for å styre hjemmet. Sensoren må være knyttet til en mikrokontroller eller tilsvarende som har ansvaret for å sende dataene videre. Dette kan enten være gjennom kabel eller trådløst. Det er mulig å programmere en mikrokontroller til å skille mellom sensordataene og forstå seks ulike gester\footnote{https://github.com/sparkfun/APDS-9960\_RGB\_and\_Gesture\_Sensor}. Dette er i seg selv bra og betyr at en enkelt sensor kan fungere som en knapp med seks forskjellige innstillinger. Hvis man også utnytter at kombinasjonen av flere gester etter hverandre kan bety egne kommandoer er styringsmulighetene mange. Det finnes et alternativ til å programmere hva de ulike dataene skal tolkes som. Alternativet er å sende rådataene til en kraftigere maskin som kan benytte den spennende teknikken kjent som maskinlæring til å forstå potensielt enda flere ulike gester.
